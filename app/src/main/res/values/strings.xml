@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Alimenta a Homero</string>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Configuración</string>
+    <string name="txt_btn_aprender">Aprender</string>
+    <string name="txt_btn_evaluar">Evaluar</string>
 </resources>

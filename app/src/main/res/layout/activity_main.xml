@@ -1,8 +1,54 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    android:layout_height="match_parent" tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/img_fondo_intro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/cielo"
+        />
+    <ImageView
+        android:id="@+id/img_titulo_intro"
+        android:layout_width="310dp"
+        android:layout_height="160dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:background="@drawable/titulo_intro"
+        android:layout_marginTop="@dimen/small_margin"/>
+    <ImageView
+        android:id="@+id/img_homero_intro"
+        android:layout_width="260dp"
+        android:layout_height="270dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/homero_intro"
+        android:layout_marginRight="@dimen/small_margin"/>
+    <Button
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:id="@+id/btn_aprender"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:text="@string/txt_btn_aprender"
+        android:layout_below="@+id/img_titulo_intro"
+        android:layout_marginLeft="@dimen/medium_margin"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:background="#fed403"
+        android:textColor="#000000"
+        android:textSize="@dimen/txt_size_btn"
+        />
+    <Button
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:id="@+id/btn_evaluar"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:text="@string/txt_btn_evaluar"
+        android:layout_below="@+id/btn_aprender"
+        android:layout_marginLeft="@dimen/medium_margin"
+        android:layout_marginTop="@dimen/small_margin"
+        android:background="#fed403"
+        android:textColor="#000000"
+        android:textSize="@dimen/txt_size_btn"
+        />
 
 </RelativeLayout>
