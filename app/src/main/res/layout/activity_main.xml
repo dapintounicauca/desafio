@@ -6,7 +6,7 @@
         android:id="@+id/img_fondo_intro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/cielo"
+        android:background="@drawable/cielo_intro"
         />
     <ImageView
         android:id="@+id/img_titulo_intro"
