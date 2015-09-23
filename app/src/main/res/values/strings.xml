@@ -4,4 +4,8 @@
     <string name="action_settings">Configuración</string>
     <string name="txt_btn_aprender">Aprender</string>
     <string name="txt_btn_evaluar">Evaluar</string>
+    <string name="title_activity_learn">Aprender</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_evaluate">Evaluar</string>
 </resources>
