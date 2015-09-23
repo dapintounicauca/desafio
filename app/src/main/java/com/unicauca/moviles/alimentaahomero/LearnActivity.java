@@ -108,6 +108,8 @@ public class LearnActivity extends AppCompatActivity implements View.OnTouchList
                     owner2.removeView(view);
                     LinearLayout container2 = (LinearLayout) v;
                     container2.addView(view);
+                    if(container2.getId()==contenedor_sd.getId())
+                        guia.setText("La boca se encarga de masticar y triturar el alimento.");
                     if(container2.getId()==contenedor_fr.getId())
                         guia.setText("Arrastra y suelta una de las frutas en alguno de los órganos del sistema digestivo de Homero.");
                 }
