@@ -73,26 +73,32 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/contenedor_organos"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="#e8e8e8"
         android:layout_below="@id/txt_guia"
+        android:layout_toRightOf="@+id/contenedor_frutas"
         android:layout_alignParentRight="true"
-        android:layout_margin="@dimen/medium_margin"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/medium_margin"
+        android:layout_marginRight="@dimen/medium_margin"
         >
-
-        <TextView
-            android:text="Sistema digestivo"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:gravity="center"
+        <ImageView
+            android:id="@+id/img_digestivocompleto"
+            android:layout_width="288dp"
+            android:layout_height="867dp"
+            android:src="@drawable/digestivocompleto"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"/>
+        <ImageView
+            android:layout_width="248dp"
+            android:layout_height="238dp"
+            android:src="@drawable/higado"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
             />
-
-    </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>
