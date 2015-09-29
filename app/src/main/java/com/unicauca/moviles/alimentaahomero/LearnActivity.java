@@ -10,12 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class LearnActivity extends AppCompatActivity implements View.OnTouchListener, View.OnDragListener {
 
-    LinearLayout contenedor_fr, contenedor_sd;
+    LinearLayout contenedor_fr;
+    RelativeLayout contenedor_sd;
     ImageView manzana, naranja, mango;
     TextView guia;
 
@@ -30,7 +32,7 @@ public class LearnActivity extends AppCompatActivity implements View.OnTouchList
         mango = (ImageView) findViewById(R.id.img_mango);
 
         contenedor_fr = (LinearLayout) findViewById(R.id.contenedor_frutas);
-        contenedor_sd = (LinearLayout) findViewById(R.id.contenedor_organos);
+        contenedor_sd = (RelativeLayout) findViewById(R.id.contenedor_organos);
         guia = (TextView) findViewById(R.id.txt_guia);
 
         manzana.setOnTouchListener(this);
