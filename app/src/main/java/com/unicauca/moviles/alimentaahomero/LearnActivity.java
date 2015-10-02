@@ -86,7 +86,7 @@ public class LearnActivity extends AppCompatActivity implements View.OnTouchList
             case DragEvent.ACTION_DROP:
                 ViewGroup owner = (ViewGroup) view.getParent();
                 owner.removeView(view);
-                LinearLayout container = (LinearLayout) v;
+                RelativeLayout container = (RelativeLayout) v;
                 container.addView(view);
                 view.setVisibility(View.VISIBLE);
 
@@ -108,7 +108,7 @@ public class LearnActivity extends AppCompatActivity implements View.OnTouchList
                     view.setVisibility(View.VISIBLE);
                     ViewGroup owner2 = (ViewGroup) view.getParent();
                     owner2.removeView(view);
-                    LinearLayout container2 = (LinearLayout) v;
+                    RelativeLayout container2 = (RelativeLayout) v;
                     container2.addView(view);
                     if(container2.getId()==contenedor_sd.getId())
                         guia.setText("La boca se encarga de masticar y triturar el alimento.");
