@@ -49,18 +49,21 @@
             android:textSize="18sp"
             android:gravity="center"
             />
+
         <ImageView
             android:id="@+id/img_manzana"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:background="@drawable/manzana"
             android:layout_gravity="center"/>
+
         <ImageView
             android:id="@+id/img_naranja"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:background="@drawable/naranja"
             android:layout_gravity="center"/>
+
         <ImageView
             android:id="@+id/img_mango"
             android:layout_width="70dp"
@@ -81,17 +84,21 @@
         android:orientation="vertical"
         android:layout_marginBottom="@dimen/medium_margin"
         android:layout_marginRight="@dimen/medium_margin"
-
         >
         <ImageView
             android:id="@+id/img_digestivocompleto"
             android:layout_width="288dp"
-            android:layout_height="wrap_content"
+            android:layout_height="867dp"
             android:src="@drawable/digestivocompleto"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"/>
-
-
+        <ImageView
+            android:layout_width="248dp"
+            android:layout_height="238dp"
+            android:src="@drawable/higado"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            />
     </RelativeLayout>
 
 </RelativeLayout>
