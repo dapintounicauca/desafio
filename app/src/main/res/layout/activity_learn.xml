@@ -84,6 +84,7 @@
         android:orientation="vertical"
         android:layout_marginBottom="@dimen/medium_margin"
         android:layout_marginRight="@dimen/medium_margin"
+
         >
         <ImageView
             android:id="@+id/img_digestivocompleto"
@@ -91,14 +92,102 @@
             android:layout_height="867dp"
             android:src="@drawable/digestivocompleto"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"/>
-        <ImageView
-            android:layout_width="248dp"
-            android:layout_height="238dp"
-            android:src="@drawable/higado"
             android:layout_centerHorizontal="true"
-            android:layout_centerInParent="true"
             />
+        <TableLayout
+            android:layout_width="288dp"
+            android:layout_height="867dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:stretchColumns="*">
+            <TableRow android:layout_weight="0.7">
+                <ImageView />
+                <ImageView />
+                <ImageView />
+                <ImageView />
+            </TableRow>
+            <TableRow
+                android:layout_weight="0.5">
+                <ImageView />
+                <ImageView
+                    android:id="@+id/pt_boca"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#550033cc"
+                    android:layout_span="2" />
+            </TableRow>
+            <TableRow
+                android:layout_weight="1.2">
+                <ImageView />
+                <ImageView />
+                <ImageView android:id="@+id/pt_esofago"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#5500ff00"/>
+            </TableRow>
+            <TableRow
+                android:layout_weight="1.2">
+                <ImageView
+                    android:id="@+id/pt_higado"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#55780018"
+                    android:layout_span="3"/>
+                <ImageView
+                    android:id="@+id/pt_estomago"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#55fe4c6a" />
+            </TableRow>
+            <TableRow
+                android:layout_weight="0.4">
+                <ImageView />
+                <ImageView
+                    android:id="@+id/pt_pancreas"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#55fffd00"
+                    android:layout_span="2" />
+            </TableRow>
+            <TableRow android:layout_weight="0.3">
+                <ImageView
+                    android:id="@+id/pt_grueso_1"
+                    android:background="#5500ffff"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_span="4"/>
+            </TableRow>
+            <TableRow
+                android:layout_weight="1.2">
+                <ImageView
+                    android:id="@+id/pt_grueso_2"
+                    android:background="#5500ffff"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+                <ImageView
+                    android:id="@+id/pt_delgado"
+                    android:background="#55bb32b2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_span="2"/>
+                <ImageView
+                    android:id="@+id/pt_grueso_3"
+                    android:background="#5500ffff"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </TableRow>
+            <TableRow
+                android:layout_weight="0.7">
+                <ImageView />
+                <ImageView
+                    android:id="@+id/pt_grueso_4"
+                    android:background="#5500ffff"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_span="2" />
+            </TableRow>
+        </TableLayout>
+
     </RelativeLayout>
 
 </RelativeLayout>
