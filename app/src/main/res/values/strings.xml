@@ -48,4 +48,23 @@
         <item>Soy el pancreas y produzco enzimas que ayudan a la digestión y genero hormonas que se pasan a la sangre. </item>
         <item>Yo soy el que realizo la última función, y me llamo intestino grueso, mido 1.5 metros de largo  aprox. mi función es absorber  el agua restante de la comida no digerida, almaceno la materia que no sirve y formo la materia fecal y la elimino del cuerpo. Realizo procesos físicos y químicos.</item>
     </string-array>
+
+    <string-array name="preguntas">
+        <item>¿Cuál es el organo donde se trituran los alimentos?</item>
+        <item>Indique el órgano que lleva el alimento de la boca la estómago.</item>
+        <item>Indique el órgano que almacena los alimentos y los mezcla con los jugos gástricos.</item>
+        <item>Indique el órgano que ayuda a degradar azucares y grasas que consumes a diario.</item>
+        <item>Indique el órgano que produce enzimás y genera hormonas</item>
+        <item>Indique el órgano que es un tubo alargado y hueco con paredes delgadas.</item>
+    </string-array>
+
+    <string-array name="respuestas">
+        <item>pt_boca</item>
+        <item>pt_esofago</item>
+        <item>pt_estomago</item>
+        <item>pt_higado</item>
+        <item>pt_pancreas</item>
+        <item>pt_delgado</item>
+    </string-array>
+
 </resources>
