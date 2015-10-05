@@ -1,6 +1,7 @@
 package com.unicauca.moviles.alimentaahomero;
 
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,7 +21,6 @@ import android.widget.TextView;
 public class LearnActivity extends AppCompatActivity implements View.OnTouchListener, View.OnDragListener, View.OnClickListener {
 
     LinearLayout contenedor_fr;
-    //RelativeLayout contenedor_sd;
     ImageView manzana, naranja, mango;
     ImageView img_info;
     LinearLayout boca, esofago, estomago, higado, pancreas, delgado, grueso1, grueso2, grueso3, grueso4;
@@ -30,6 +30,7 @@ public class LearnActivity extends AppCompatActivity implements View.OnTouchList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_learn);
 
         titulo_info = (TextView) findViewById(R.id.titulo_info);
@@ -122,20 +123,56 @@ public class LearnActivity extends AppCompatActivity implements View.OnTouchList
             case DragEvent.ACTION_DRAG_EXITED:
                 break;
             case DragEvent.ACTION_DROP:
-                ViewGroup owner = (ViewGroup) view.getParent();
-                owner.removeView(view);
+                /*ViewGroup owner = (ViewGroup) view.getParent();
+                owner.removeView(view);*/
 
                 LinearLayout container = (LinearLayout) v;
-                container.addView(view);
+                //container.addView(view);
                 view.setVisibility(View.VISIBLE);
+
+                Intent intent = new Intent(this, ProcessActivity.class);
 
                 switch (container.getId())
                 {
                     case R.id.pt_boca:
-                        contenido_info.setText("La boca se encarga de masticar y triturar el alimento.");
+                        ProcessActivity.ORGANO = "Boca";
+                        startActivity(intent);
                         break;
                     case R.id.pt_esofago:
-                        contenido_info.setText("El esofago bla, bla...");
+                        ProcessActivity.ORGANO = "Esofago";
+                        startActivity(intent);
+                        break;
+                    case R.id.pt_estomago:
+                        ProcessActivity.ORGANO = "Estomago";
+                        startActivity(intent);
+                        break;
+                    case R.id.pt_higado:
+                        ProcessActivity.ORGANO = "Higado";
+                        startActivity(intent);
+                        break;
+                    case R.id.pt_pancreas:
+                        ProcessActivity.ORGANO = "Pancreas";
+                        startActivity(intent);
+                        break;
+                    case R.id.pt_delgado:
+                        ProcessActivity.ORGANO = "Delgado";
+                        startActivity(intent);
+                        break;
+                    case R.id.pt_grueso_1:
+                        ProcessActivity.ORGANO = "Grueso";
+                        startActivity(intent);
+                        break;
+                    case R.id.pt_grueso_2:
+                        ProcessActivity.ORGANO = "Grueso";
+                        startActivity(intent);
+                        break;
+                    case R.id.pt_grueso_3:
+                        ProcessActivity.ORGANO = "Grueso";
+                        startActivity(intent);
+                        break;
+                    case R.id.pt_grueso_4:
+                        ProcessActivity.ORGANO = "Grueso";
+                        startActivity(intent);
                         break;
                     case R.id.contenedor_frutas:
                         titulo_info.setText(R.string.titulo_info_aprender);
@@ -146,10 +183,10 @@ public class LearnActivity extends AppCompatActivity implements View.OnTouchList
 
             case DragEvent.ACTION_DRAG_ENDED:
                 if (!event.getResult()) {
-                    ViewGroup owner2 = (ViewGroup) view.getParent();
-                    owner2.removeView(view);
+                    /*ViewGroup owner2 = (ViewGroup) view.getParent();
+                    owner2.removeView(view);*/
                     LinearLayout container2 = (LinearLayout) v;
-                    container2.addView(view);
+                    //container2.addView(view);
                     view.setVisibility(View.VISIBLE);
 
                     switch (container2.getId())

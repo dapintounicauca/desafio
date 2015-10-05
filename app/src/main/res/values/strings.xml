@@ -8,8 +8,9 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_evaluate">Evaluar</string>
-
     <string name="titulo_info_aprender">¡Hola!</string>
+    <string name="title_activity_process">Proceso</string>
+
     <string name="contenido_info_aprender">Arrastra y suelta una de las frutas en alguno de los órganos de mi sistema digestivo.</string>
 
     <string name="drag_manzana">Suelta la manzana en un órgano de mi sistema digestivo.</string>
@@ -38,4 +39,13 @@
         <item>Tubo muscular que absorbe agua y nutrientes minerales de los alimentos, también se almacena la materia fecal.</item>
     </string-array>
 
+    <string-array name="procesos_alimento">
+        <item>¡HOLA! Yo soy los dientes aquí me encargaré de masticar los alimentos, por eso me dicen que el proceso que realizo es físico.</item>
+        <item>Soy el esófago y llevo el alimento de la boca al estómago gracias a mis movimientos que les llamamos peristálticos, por eso sirvo de camino y además ayudo a que se termine de formar el bolo alimenticio.</item>
+        <item>Yo soy el estómago y tengo forma de Jota, me encargo de recibir los alimentos, de almacenarlos y mezclarlos  con mis jugos gástricos, que ayudan a eliminar microorganismos. El proceso que realizo es químico.</item>
+        <item>Yo soy el Intestino delgado  y recibo el quimo , además  me encargo de absorber los nutrientes de la comida, que serán transportados por el sistema circulatorio a todo el cuerpo. Realizo procesos químicos y físicos.</item>
+        <item>Soy el higado y me encargó de segregar sustancias como los jugos pancreáticos y la bilis al intestino delgado, ayudándole a degradar los azucares y grasas que tú consumes. Nosotros realizamos procesos químicos.</item>
+        <item>Soy el pancreas y produzco enzimas que ayudan a la digestión y genero hormonas que se pasan a la sangre. </item>
+        <item>Yo soy el que realizo la última función, y me llamo intestino grueso, mido 1.5 metros de largo  aprox. mi función es absorber  el agua restante de la comida no digerida, almaceno la materia que no sirve y formo la materia fecal y la elimino del cuerpo. Realizo procesos físicos y químicos.</item>
+    </string-array>
 </resources>
