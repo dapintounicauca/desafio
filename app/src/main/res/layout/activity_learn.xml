@@ -18,19 +18,41 @@
         android:background="@drawable/titulo_intro"
         android:layout_marginTop="@dimen/small_margin"/>
 
-    <TextView
-        android:id="@+id/txt_guia"
+    <RelativeLayout
+        android:id="@+id/contenedor_info"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="110dp"
         android:background="#e8e8e8"
         android:layout_margin="@dimen/medium_margin"
         android:padding="10dp"
-        android:text="Arrastra y suelta una de las frutas en alguno de los órganos del sistema digestivo de Homero."
         android:layout_below="@id/img_titulo_intro"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        android:gravity="center"
-        />
+        >
+        <ImageView
+            android:id="@+id/img_info"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/homer_info"
+            android:layout_marginRight="5dp"
+            />
+        <TextView
+            android:id="@+id/titulo_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/titulo_info_aprender"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_toRightOf="@id/img_info"/>
+
+        <TextView
+            android:id="@+id/contenido_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/contenido_info_aprender"
+            android:layout_below="@id/titulo_info"
+            android:layout_toRightOf="@id/img_info"
+            android:textColor="#d2000000"
+            android:textSize="14sp"/>
+    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/contenedor_frutas"
@@ -38,7 +60,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="#e8e8e8"
-        android:layout_below="@id/txt_guia"
+        android:layout_below="@id/contenedor_info"
         android:layout_marginLeft="@dimen/medium_margin">
 
         <TextView
@@ -78,7 +100,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="#e8e8e8"
-        android:layout_below="@id/txt_guia"
+        android:layout_below="@id/contenedor_info"
         android:layout_toRightOf="@+id/contenedor_frutas"
         android:layout_alignParentRight="true"
         android:orientation="vertical"
@@ -109,82 +131,92 @@
             <TableRow
                 android:layout_weight="0.5">
                 <ImageView />
-                <ImageView
+                <LinearLayout
                     android:id="@+id/pt_boca"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#550033cc"
-                    android:layout_span="2" />
+                    android:layout_span="2"
+                    android:orientation="vertical" />
             </TableRow>
             <TableRow
                 android:layout_weight="1.2">
                 <ImageView />
                 <ImageView />
-                <ImageView android:id="@+id/pt_esofago"
+                <LinearLayout android:id="@+id/pt_esofago"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#5500ff00"/>
+                    android:background="#5500ff00"
+                    android:orientation="vertical"/>
             </TableRow>
             <TableRow
                 android:layout_weight="1.2">
-                <ImageView
+                <LinearLayout
                     android:id="@+id/pt_higado"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#55780018"
-                    android:layout_span="3"/>
-                <ImageView
+                    android:layout_span="3"
+                    android:orientation="vertical"/>
+                <LinearLayout
                     android:id="@+id/pt_estomago"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#55fe4c6a" />
+                    android:background="#55fe4c6a"
+                    android:orientation="vertical"/>
             </TableRow>
             <TableRow
                 android:layout_weight="0.4">
                 <ImageView />
-                <ImageView
+                <LinearLayout
                     android:id="@+id/pt_pancreas"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#55fffd00"
-                    android:layout_span="2" />
+                    android:layout_span="2"
+                    android:orientation="vertical"/>
             </TableRow>
             <TableRow android:layout_weight="0.3">
-                <ImageView
+                <LinearLayout
                     android:id="@+id/pt_grueso_1"
                     android:background="#5500ffff"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_span="4"/>
+                    android:layout_span="4"
+                    android:orientation="vertical"/>
             </TableRow>
             <TableRow
                 android:layout_weight="1.2">
-                <ImageView
+                <LinearLayout
                     android:id="@+id/pt_grueso_2"
                     android:background="#5500ffff"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-                <ImageView
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"/>
+                <LinearLayout
                     android:id="@+id/pt_delgado"
                     android:background="#55bb32b2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_span="2"/>
-                <ImageView
+                    android:layout_span="2"
+                    android:orientation="vertical"/>
+                <LinearLayout
                     android:id="@+id/pt_grueso_3"
                     android:background="#5500ffff"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"/>
             </TableRow>
             <TableRow
                 android:layout_weight="0.7">
                 <ImageView />
-                <ImageView
+                <LinearLayout
                     android:id="@+id/pt_grueso_4"
                     android:background="#5500ffff"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_span="2" />
+                    android:layout_span="2"
+                    android:orientation="vertical"/>
             </TableRow>
         </TableLayout>
 

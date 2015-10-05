@@ -8,4 +8,34 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_evaluate">Evaluar</string>
+
+    <string name="titulo_info_aprender">¡Hola!</string>
+    <string name="contenido_info_aprender">Arrastra y suelta una de las frutas en alguno de los órganos de mi sistema digestivo.</string>
+
+    <string name="drag_manzana">Suelta la manzana en un órgano de mi sistema digestivo.</string>
+    <string name="drag_naranja">Suelta la naranja en un órgano de mi sistema digestivo.</string>
+    <string name="drag_mango">Suelta el mango en un órgano de mi sistema digestivo.</string>
+
+    <string-array name="organos">
+        <item>Boca</item>
+        <item>Faringe</item>
+        <item>Esófago</item>
+        <item>Estómago</item>
+        <item>Intestino delgado</item>
+        <item>Hígado</item>
+        <item>Páncreas</item>
+        <item>Intestino grueso</item>
+    </string-array>
+
+    <string-array name="info_organos">
+        <item>Es la puerta del sistema digestivo, a través de ella los alimentos pasan al interior del cuerpo.</item>
+        <item>Tubo que conecta la boca, fosas nasales y el esófago respectivamente, a través de él pasa el aire y alimentos.</item>
+        <item>Tubo que comunica la boca con el estómago, lleva los alimentos desde la faringe hasta el estómago.</item>
+        <item>Tubo digestivo ensanchado en forma de saco, donde se almacenan los alimentos y se mezclan con los jugos gástricos.</item>
+        <item>Tubo alargado y hueco con paredes más delgadas que las del estómago, absorbe los nutrientes necesarios para nuestro cuerpo.</item>
+        <item>Órgano de forma aplanada, tamaño grande, segrega la bilis, almacena sustancias, nutrientes y sintetiza enzimas y proteínas.</item>
+        <item>Glándula ubicada en el abdomen, produce enzimas que ayudan a la digestión y genera hormonas que pasan a la sangre.</item>
+        <item>Tubo muscular que absorbe agua y nutrientes minerales de los alimentos, también se almacena la materia fecal.</item>
+    </string-array>
+
 </resources>
