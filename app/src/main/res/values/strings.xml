@@ -15,7 +15,7 @@
 
     <string name="drag_manzana">Suelta la manzana en un órgano de mi sistema digestivo.</string>
     <string name="drag_naranja">Suelta la naranja en un órgano de mi sistema digestivo.</string>
-    <string name="drag_mango">Suelta el mango en un órgano de mi sistema digestivo.</string>
+    <string name="drag_uva">Suelta las uvas en un órgano de mi sistema digestivo.</string>
 
     <string-array name="organos">
         <item>Boca</item>
@@ -56,6 +56,7 @@
         <item>Indique el órgano que ayuda a degradar azucares y grasas que consumes a diario.</item>
         <item>Indique el órgano que produce enzimás y genera hormonas</item>
         <item>Indique el órgano que es un tubo alargado y hueco con paredes delgadas.</item>
+        <item>Indique el órgano que almacena la materia fecal.</item>
     </string-array>
 
     <string-array name="respuestas">
@@ -65,6 +66,7 @@
         <item>pt_higado</item>
         <item>pt_pancreas</item>
         <item>pt_delgado</item>
+        <item>pt_grueso</item>
     </string-array>
 
 </resources>

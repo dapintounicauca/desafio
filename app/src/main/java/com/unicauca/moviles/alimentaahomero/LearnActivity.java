@@ -9,12 +9,8 @@ import android.util.Log;
 import android.view.DragEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TableLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -61,7 +57,7 @@ public class LearnActivity extends AppCompatActivity implements View.OnTouchList
 
         manzana = (ImageView) findViewById(R.id.img_manzana);
         naranja = (ImageView) findViewById(R.id.img_naranja);
-        mango = (ImageView) findViewById(R.id.img_mango);
+        mango = (ImageView) findViewById(R.id.img_uva);
         manzana.setOnTouchListener(this);
         naranja.setOnTouchListener(this);
         mango.setOnTouchListener(this);
@@ -111,8 +107,8 @@ public class LearnActivity extends AppCompatActivity implements View.OnTouchList
                     case R.id.img_naranja:
                         contenido_info.setText(R.string.drag_naranja);
                         break;
-                    case R.id.img_mango:
-                        contenido_info.setText(R.string.drag_mango);
+                    case R.id.img_uva:
+                        contenido_info.setText(R.string.drag_uva);
                         break;
                     default:
                         break;

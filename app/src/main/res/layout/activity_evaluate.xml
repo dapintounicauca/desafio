@@ -19,6 +19,90 @@
         android:background="@drawable/titulo_intro"
         android:layout_marginTop="@dimen/small_margin"/>
 
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contenedor_preguntas"
+        android:layout_alignLeft="@+id/contenedor_preguntas"
+        android:layout_toLeftOf="@+id/contenedor_organos"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vidas:"
+            android:textSize="25sp"
+            android:textColor="#000000"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp"
+            >
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/corazon"/>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/corazon"/>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/corazon" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Puntos: "
+            android:textSize="25sp"
+            android:textColor="#000000"/>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            >
+            <TableRow>
+                <ImageView android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/estrella"/>
+                <ImageView android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/estrella"/>
+                <ImageView android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/estrella"
+                    />
+                <ImageView android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/estrella"
+                    android:tint="#796d0c" />
+                <ImageView android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/estrella"/>
+            </TableRow>
+            <TableRow>
+                <ImageView android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/estrella"/>
+                <ImageView android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/estrella"/>
+                <ImageView android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/estrella"/>
+                <ImageView android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/estrella"/>
+                <ImageView android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/estrella"/>
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
     <RelativeLayout
         android:id="@+id/contenedor_preguntas"
         android:layout_width="match_parent"
@@ -43,7 +127,7 @@
             android:layout_height="wrap_content"
             android:text=""
             android:textColor="#000000"
-            android:textSize="18sp"
+            android:textSize="22sp"
             android:layout_toRightOf="@id/img_pregunta"/>
 
         <TextView
@@ -53,7 +137,7 @@
             android:layout_below="@id/num_pregunta"
             android:layout_toRightOf="@id/img_pregunta"
             android:textColor="#d2000000"
-            android:textSize="14sp"/>
+            android:textSize="20sp"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -76,20 +160,20 @@
             android:layout_centerHorizontal="true"
             />
         <TableLayout
-            android:layout_width="288dp"
+            android:layout_width="170dp"
             android:layout_height="867dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:stretchColumns="*">
             <TableRow android:layout_weight="0.7">
                 <ImageView />
-                <ImageView />
+                <ImageView android:layout_height="wrap_content" />
                 <ImageView />
                 <ImageView />
             </TableRow>
             <TableRow
                 android:layout_weight="0.5">
-                <ImageView />
+                <ImageView android:layout_height="wrap_content" />
                 <ImageView
                     android:id="@+id/pt_boca"
                     android:layout_width="match_parent"
@@ -130,43 +214,45 @@
                     android:background="#55fffd00"
                     android:layout_span="2"/>
             </TableRow>
-            <TableRow android:layout_weight="0.3">
-                <ImageView
-                    android:id="@+id/pt_grueso_1"
-                    android:background="#5500ffff"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_span="4"/>
-            </TableRow>
-            <TableRow
-                android:layout_weight="1.2">
-                <ImageView
-                    android:id="@+id/pt_grueso_2"
-                    android:background="#5500ffff"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-                <ImageView
-                    android:id="@+id/pt_delgado"
-                    android:background="#55bb32b2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_span="2"/>
-                <ImageView
-                    android:id="@+id/pt_grueso_3"
-                    android:background="#5500ffff"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+            <TableRow>
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:layout_span="4">
+                    <ImageView
+                        android:id="@+id/pt_grueso"
+                        android:background="#5500ffff"
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:layout_centerHorizontal="true"
+                        />
+                    <ImageView
+                        android:id="@+id/pt_delgado"
+                        android:background="#55bb32b2"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignBottom="@+id/pt_grueso"
+                        />
+                </RelativeLayout>
             </TableRow>
             <TableRow
                 android:layout_weight="0.7">
                 <ImageView />
                 <ImageView
-                    android:id="@+id/pt_grueso_4"
-                    android:background="#5500ffff"
+                    android:id="@+id/pt_ano"
+                    android:background="#5500ff11"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_span="2"/>
             </TableRow>
         </TableLayout>
     </RelativeLayout>
+    <ImageView
+        android:id="@+id/img_result"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignLeft="@+id/contenedor_preguntas"
+        android:layout_alignBottom="@+id/contenedor_organos"
+        />
+
 </RelativeLayout>

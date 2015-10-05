@@ -87,10 +87,10 @@
             android:layout_gravity="center"/>
 
         <ImageView
-            android:id="@+id/img_mango"
+            android:id="@+id/img_uva"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:background="@drawable/mango"
+            android:background="@drawable/uva"
             android:layout_gravity="center"/>
 
     </LinearLayout>
