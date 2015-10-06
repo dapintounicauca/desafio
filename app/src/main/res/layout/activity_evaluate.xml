@@ -155,24 +155,24 @@
             android:id="@+id/img_digestivocompleto"
             android:layout_width="288dp"
             android:layout_height="867dp"
-            android:src="@drawable/digestivocompleto"
+            android:src="@drawable/sistema_digestivo"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             />
         <TableLayout
-            android:layout_width="170dp"
+            android:layout_width="120dp"
             android:layout_height="867dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:stretchColumns="*">
-            <TableRow android:layout_weight="0.7">
+            <TableRow android:layout_weight="2.7">
                 <ImageView />
                 <ImageView android:layout_height="wrap_content" />
                 <ImageView />
                 <ImageView />
             </TableRow>
             <TableRow
-                android:layout_weight="0.5">
+                android:layout_weight="0.6">
                 <ImageView android:layout_height="wrap_content" />
                 <ImageView
                     android:id="@+id/pt_boca"
@@ -182,7 +182,7 @@
                     android:layout_span="2" />
             </TableRow>
             <TableRow
-                android:layout_weight="1.2">
+                android:layout_weight="1.3">
                 <ImageView />
                 <ImageView />
                 <ImageView android:id="@+id/pt_esofago"
@@ -191,7 +191,7 @@
                     android:background="#5500ff00"/>
             </TableRow>
             <TableRow
-                android:layout_weight="1.2">
+                android:layout_weight="1.4">
                 <ImageView
                     android:id="@+id/pt_higado"
                     android:layout_width="match_parent"
@@ -205,13 +205,13 @@
                     android:background="#55fe4c6a"/>
             </TableRow>
             <TableRow
-                android:layout_weight="0.4">
+                android:layout_weight="0.3">
                 <ImageView />
                 <ImageView
                     android:id="@+id/pt_pancreas"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#55fffd00"
+                    android:background="#b843ec41"
                     android:layout_span="2"/>
             </TableRow>
             <TableRow>
@@ -220,23 +220,23 @@
                     android:layout_span="4">
                     <ImageView
                         android:id="@+id/pt_grueso"
-                        android:background="#5500ffff"
+                        android:background="#557300ff"
                         android:layout_width="match_parent"
-                        android:layout_height="130dp"
+                        android:layout_height="100dp"
                         android:layout_centerHorizontal="true"
                         />
                     <ImageView
                         android:id="@+id/pt_delgado"
-                        android:background="#55bb32b2"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:background="#5534ec0f"
+                        android:layout_width="70dp"
+                        android:layout_height="75dp"
                         android:layout_centerHorizontal="true"
                         android:layout_alignBottom="@+id/pt_grueso"
                         />
                 </RelativeLayout>
             </TableRow>
             <TableRow
-                android:layout_weight="0.7">
+                android:layout_weight="0.8">
                 <ImageView />
                 <ImageView
                     android:id="@+id/pt_ano"
@@ -250,7 +250,7 @@
     <ImageView
         android:id="@+id/img_result"
         android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_height="280dp"
         android:layout_alignLeft="@+id/contenedor_preguntas"
         android:layout_alignBottom="@+id/contenedor_organos"
         />
