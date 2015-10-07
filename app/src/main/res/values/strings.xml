@@ -57,6 +57,10 @@
         <item>Indique el órgano que produce enzimás y genera hormonas</item>
         <item>Indique el órgano que es un tubo alargado y hueco con paredes delgadas.</item>
         <item>Indique el órgano que almacena la materia fecal.</item>
+        <item>Indique el órgano que permite la salida de los desechos del cuerpo.</item>
+        <item>Indique el órgano se ve afectado si consumes bebidas alcoholicas.</item>
+        <item>Indique el órgano se ve afectado cuando no se tiene una higiene dental</item>
+
     </string-array>
 
     <string-array name="respuestas">
@@ -67,6 +71,9 @@
         <item>pt_pancreas</item>
         <item>pt_delgado</item>
         <item>pt_grueso</item>
+        <item>pt_ano</item>
+        <item>pt_higado</item>
+        <item>pt_boca</item>
     </string-array>
 
 </resources>

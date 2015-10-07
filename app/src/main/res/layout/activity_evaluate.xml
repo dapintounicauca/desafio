@@ -33,25 +33,27 @@
             android:text="Vidas:"
             android:textSize="25sp"
             android:textColor="#000000"/>
-        <LinearLayout
+        <TableLayout
+            android:id="@+id/tabla_vidas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:paddingLeft="15dp"
             >
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/corazon"/>
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/corazon"/>
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/corazon" />
-        </LinearLayout>
+            <TableRow>
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/corazon"/>
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/corazon"/>
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/corazon" />
+            </TableRow>
+        </TableLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,6 +61,7 @@
             android:textSize="25sp"
             android:textColor="#000000"/>
         <TableLayout
+            android:id="@+id/tabla_estrellas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="15dp"
@@ -66,38 +69,47 @@
             <TableRow>
                 <ImageView android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/estrella"/>
-                <ImageView android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/estrella"/>
-                <ImageView android:layout_width="40dp"
-                    android:layout_height="40dp"
                     android:src="@drawable/estrella"
+                    android:tint="@android:color/white"
                     />
                 <ImageView android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/estrella"
-                    android:tint="#796d0c" />
+                    android:tint="@android:color/white"/>
                 <ImageView android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/estrella"/>
+                    android:src="@drawable/estrella"
+                    android:tint="@android:color/white"/>
+                <ImageView android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/estrella"
+                    android:tint="@android:color/white"/>
+                <ImageView android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/estrella"
+                    android:tint="@android:color/white"/>
             </TableRow>
             <TableRow>
                 <ImageView android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/estrella"/>
+                    android:src="@drawable/estrella"
+                    android:tint="@android:color/white"/>
                 <ImageView android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/estrella"/>
+                    android:src="@drawable/estrella"
+                    android:tint="@android:color/white"/>
                 <ImageView android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/estrella"/>
+                    android:src="@drawable/estrella"
+                    android:tint="@android:color/white"/>
                 <ImageView android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/estrella"/>
+                    android:src="@drawable/estrella"
+                    android:tint="@android:color/white"/>
                 <ImageView android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/estrella"/>
+                    android:src="@drawable/estrella"
+                    android:tint="@android:color/white"/>
             </TableRow>
         </TableLayout>
 
