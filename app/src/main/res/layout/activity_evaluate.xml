@@ -217,7 +217,7 @@
                     android:background="#55fe4c6a"/>
             </TableRow>
             <TableRow
-                android:layout_weight="0.3">
+                android:layout_weight="0.4">
                 <ImageView />
                 <ImageView
                     android:id="@+id/pt_pancreas"
@@ -234,7 +234,7 @@
                         android:id="@+id/pt_grueso"
                         android:background="#557300ff"
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
+                        android:layout_height="97dp"
                         android:layout_centerHorizontal="true"
                         />
                     <ImageView

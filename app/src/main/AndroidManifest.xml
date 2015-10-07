@@ -25,8 +25,9 @@
             android:label="@string/title_activity_evaluate" >
         </activity>
         <activity
-            android:name=".ProcessActivity"
-            android:label="@string/title_activity_process" >
+            android:name=".ContentActivity"
+            android:label="@string/title_activity_content"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
     </application>
 

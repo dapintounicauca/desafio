@@ -19,34 +19,24 @@
 
     <string-array name="organos">
         <item>Boca</item>
-        <item>Faringe</item>
         <item>Esófago</item>
         <item>Estómago</item>
         <item>Intestino delgado</item>
         <item>Hígado</item>
         <item>Páncreas</item>
         <item>Intestino grueso</item>
+        <item>Ano</item>
     </string-array>
 
     <string-array name="info_organos">
-        <item>Es la puerta del sistema digestivo, a través de ella los alimentos pasan al interior del cuerpo.</item>
-        <item>Tubo que conecta la boca, fosas nasales y el esófago respectivamente, a través de él pasa el aire y alimentos.</item>
-        <item>Tubo que comunica la boca con el estómago, lleva los alimentos desde la faringe hasta el estómago.</item>
-        <item>Tubo digestivo ensanchado en forma de saco, donde se almacenan los alimentos y se mezclan con los jugos gástricos.</item>
-        <item>Tubo alargado y hueco con paredes más delgadas que las del estómago, absorbe los nutrientes necesarios para nuestro cuerpo.</item>
-        <item>Órgano de forma aplanada, tamaño grande, segrega la bilis, almacena sustancias, nutrientes y sintetiza enzimas y proteínas.</item>
-        <item>Glándula ubicada en el abdomen, produce enzimas que ayudan a la digestión y genera hormonas que pasan a la sangre.</item>
-        <item>Tubo muscular que absorbe agua y nutrientes minerales de los alimentos, también se almacena la materia fecal.</item>
-    </string-array>
-
-    <string-array name="procesos_alimento">
-        <item>¡HOLA! Yo soy los dientes aquí me encargaré de masticar los alimentos, por eso me dicen que el proceso que realizo es físico.</item>
-        <item>Soy el esófago y llevo el alimento de la boca al estómago gracias a mis movimientos que les llamamos peristálticos, por eso sirvo de camino y además ayudo a que se termine de formar el bolo alimenticio.</item>
-        <item>Yo soy el estómago y tengo forma de Jota, me encargo de recibir los alimentos, de almacenarlos y mezclarlos  con mis jugos gástricos, que ayudan a eliminar microorganismos. El proceso que realizo es químico.</item>
-        <item>Yo soy el Intestino delgado  y recibo el quimo , además  me encargo de absorber los nutrientes de la comida, que serán transportados por el sistema circulatorio a todo el cuerpo. Realizo procesos químicos y físicos.</item>
-        <item>Soy el higado y me encargó de segregar sustancias como los jugos pancreáticos y la bilis al intestino delgado, ayudándole a degradar los azucares y grasas que tú consumes. Nosotros realizamos procesos químicos.</item>
-        <item>Soy el pancreas y produzco enzimas que ayudan a la digestión y genero hormonas que se pasan a la sangre. </item>
-        <item>Yo soy el que realizo la última función, y me llamo intestino grueso, mido 1.5 metros de largo  aprox. mi función es absorber  el agua restante de la comida no digerida, almaceno la materia que no sirve y formo la materia fecal y la elimino del cuerpo. Realizo procesos físicos y químicos.</item>
+        <item>Soy la puerta del sistema digestivo, a través de mí los alimentos pasan al interior del cuerpo.</item>
+        <item>Soy el tubo por el que transita el alimento de la boca al estómago.</item>
+        <item>Soy un saco elástico en forma de Jota, almacenó los alimentos y los mezclo con los jugos gástricos.</item>
+        <item>Soy un tubo alargado, flexible y hueco, con paredes delgadas, absorbo los nutrientes del alimento.</item>
+        <item>Soy el órgano sólido más grande el cuerpo, sintetizo proteinas, almaceno vitaminas y segregó la bilis.</item>
+        <item>Soy la glándula que produce enzimas que ayudan a la digestión y genero hormonas que pasan a la sangre.</item>
+        <item>Soy el tubo muscular que absorbe agua y nutrientes minerales de los alimentos, almaceno la materia fecal.</item>
+        <item>Soy el orificio por donde sale la materia fecal, me encuentro en el final del tubo digestivo.</item>
     </string-array>
 
     <string-array name="preguntas">
@@ -75,5 +65,6 @@
         <item>pt_higado</item>
         <item>pt_boca</item>
     </string-array>
+    <string name="title_activity_content">ContentActivity</string>
 
 </resources>

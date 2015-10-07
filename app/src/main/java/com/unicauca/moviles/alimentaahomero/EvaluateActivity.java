@@ -125,6 +125,7 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
                 mostrar_resultado(1); //finaliza el juego al completar 10 preguntas
             else
                 siguientePregunta();
+
         }
         else {
             if(num_corazones==0) //finaliza el juego al perder los 3 corazones
