@@ -12,30 +12,68 @@
 
     <ImageView
         android:id="@+id/img_titulo_intro"
-        android:layout_width="270dp"
-        android:layout_height="120dp"
+        android:layout_width="300dp"
+        android:layout_height="140dp"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:background="@drawable/titulo_intro"
-        android:layout_marginTop="@dimen/small_margin"/>
+        android:layout_marginTop="@dimen/small_margin"
+        />
 
-    <LinearLayout android:layout_width="match_parent"
+    <RelativeLayout
+        android:id="@+id/contenedor_preguntas"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="#e8e8e8"
+        android:layout_margin="@dimen/medium_margin"
+        android:padding="5dp"
+        android:layout_below="@id/img_titulo_intro">
+
+        <ImageView
+            android:id="@+id/img_pregunta"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/homero_intelectual"
+            android:layout_marginRight="5dp"
+            android:layout_centerVertical="true"
+            />
+
+        <TextView
+            android:id="@+id/num_pregunta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="40sp"
+            android:layout_toRightOf="@id/img_pregunta"/>
+
+        <TextView
+            android:id="@+id/pregunta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/num_pregunta"
+            android:layout_toRightOf="@id/img_pregunta"
+            android:textColor="#d2000000"
+            android:textSize="25sp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/puntajes"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/contenedor_preguntas"
-        android:layout_alignLeft="@+id/contenedor_preguntas"
-        android:layout_toLeftOf="@+id/contenedor_organos"
-        android:layout_marginRight="10dp"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:layout_marginLeft="20dp"
+        android:padding="20dp">
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Vidas:"
             android:textSize="25sp"
             android:textColor="#000000"/>
         <TableLayout
             android:id="@+id/tabla_vidas"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="15dp"
             >
@@ -55,14 +93,14 @@
             </TableRow>
         </TableLayout>
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Puntos: "
             android:textSize="25sp"
             android:textColor="#000000"/>
         <TableLayout
             android:id="@+id/tabla_estrellas"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="15dp"
             >
@@ -116,75 +154,36 @@
     </LinearLayout>
 
     <RelativeLayout
-        android:id="@+id/contenedor_preguntas"
-        android:layout_width="match_parent"
-        android:layout_height="110dp"
-        android:background="#e8e8e8"
-        android:layout_margin="@dimen/medium_margin"
-        android:padding="5dp"
-        android:layout_below="@id/img_titulo_intro">
-
-        <ImageView
-            android:id="@+id/img_pregunta"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/homero_intelectual"
-            android:layout_marginRight="5dp"
-            android:layout_centerVertical="true"
-            />
-
-        <TextView
-            android:id="@+id/num_pregunta"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="#000000"
-            android:textSize="22sp"
-            android:layout_toRightOf="@id/img_pregunta"/>
-
-        <TextView
-            android:id="@+id/pregunta"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/num_pregunta"
-            android:layout_toRightOf="@id/img_pregunta"
-            android:textColor="#d2000000"
-            android:textSize="20sp"/>
-    </RelativeLayout>
-
-    <RelativeLayout
         android:id="@+id/contenedor_organos"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="#e8e8e8"
         android:layout_below="@id/contenedor_preguntas"
-        android:layout_toRightOf="@+id/contenedor_frutas"
+        android:layout_toRightOf="@+id/puntajes"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="@dimen/medium_margin"
         android:layout_marginRight="@dimen/medium_margin"
         >
         <ImageView
             android:id="@+id/img_digestivocompleto"
-            android:layout_width="288dp"
-            android:layout_height="867dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:src="@drawable/sistema_digestivo"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            />
+            android:layout_alignParentTop="true" />
         <TableLayout
-            android:layout_width="120dp"
-            android:layout_height="867dp"
-            android:layout_alignParentTop="true"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
             android:layout_centerHorizontal="true"
             android:stretchColumns="*">
-            <TableRow android:layout_weight="2.7">
+            <TableRow android:layout_weight="2.9">
                 <ImageView />
-                <ImageView android:layout_height="wrap_content" />
+                <ImageView />
                 <ImageView />
                 <ImageView />
             </TableRow>
             <TableRow
-                android:layout_weight="0.6">
+                android:layout_weight="0.5">
                 <ImageView android:layout_height="wrap_content" />
                 <ImageView
                     android:id="@+id/pt_boca"
@@ -194,7 +193,7 @@
                     android:layout_span="2" />
             </TableRow>
             <TableRow
-                android:layout_weight="1.3">
+                android:layout_weight="1.4">
                 <ImageView />
                 <ImageView />
                 <ImageView android:id="@+id/pt_esofago"
@@ -203,7 +202,7 @@
                     android:background="#5500ff00"/>
             </TableRow>
             <TableRow
-                android:layout_weight="1.4">
+                android:layout_weight="1.5">
                 <ImageView
                     android:id="@+id/pt_higado"
                     android:layout_width="match_parent"
@@ -217,7 +216,7 @@
                     android:background="#55fe4c6a"/>
             </TableRow>
             <TableRow
-                android:layout_weight="0.4">
+                android:layout_weight="0.5">
                 <ImageView />
                 <ImageView
                     android:id="@+id/pt_pancreas"
@@ -234,21 +233,21 @@
                         android:id="@+id/pt_grueso"
                         android:background="#557300ff"
                         android:layout_width="match_parent"
-                        android:layout_height="97dp"
+                        android:layout_height="170dp"
                         android:layout_centerHorizontal="true"
                         />
                     <ImageView
                         android:id="@+id/pt_delgado"
                         android:background="#5534ec0f"
-                        android:layout_width="70dp"
-                        android:layout_height="75dp"
+                        android:layout_width="110dp"
+                        android:layout_height="120dp"
                         android:layout_centerHorizontal="true"
                         android:layout_alignBottom="@+id/pt_grueso"
                         />
                 </RelativeLayout>
             </TableRow>
             <TableRow
-                android:layout_weight="0.8">
+                android:layout_weight="0.7">
                 <ImageView />
                 <ImageView
                     android:id="@+id/pt_ano"
@@ -261,10 +260,12 @@
     </RelativeLayout>
     <ImageView
         android:id="@+id/img_result"
-        android:layout_width="200dp"
-        android:layout_height="280dp"
-        android:layout_alignLeft="@+id/contenedor_preguntas"
-        android:layout_alignBottom="@+id/contenedor_organos"
+        android:layout_width="wrap_content"
+        android:layout_height="390dp"
+        android:layout_alignParentLeft="true"
+        android:layout_toStartOf="@+id/contenedor_organos"
+        android:layout_toLeftOf="@+id/contenedor_organos"
+        android:layout_alignParentBottom="true"
         />
 
 </RelativeLayout>
