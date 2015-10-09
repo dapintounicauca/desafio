@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/txt_intro_indicaciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/intro_indicacionLearn"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/indicacion1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_intro_indicaciones"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/img_indicacion1"
+            android:layout_width="150dp"
+            android:layout_height="250dp"
+            android:src="@drawable/indicacion1"
+            android:layout_marginRight="10dp"/>
+
+
+        <TextView
+            android:id="@+id/txt_indicacion1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_indicacion1Learn"
+            android:layout_toRightOf="@id/img_indicacion1"
+            android:layout_centerVertical="true"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/indicacion2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/indicacion1"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/img_indicacion2"
+            android:layout_width="150dp"
+            android:layout_height="250dp"
+            android:background="@drawable/indicacion2"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/txt_indicacion2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_indicacion2Learn"
+            android:textColor="#000000"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/img_indicacion2"
+            android:textSize="20sp"
+            />
+
+    </RelativeLayout>
+
+    <CheckBox
+        android:id="@+id/cb_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_skip_message"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>

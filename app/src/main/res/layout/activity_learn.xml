@@ -33,6 +33,7 @@
             android:layout_height="100dp"
             android:src="@drawable/homer_info"
             android:layout_marginRight="5dp"
+            android:layout_centerVertical="true"
             />
         <TextView
             android:id="@+id/titulo_info"
@@ -208,4 +209,13 @@
             </TableRow>
         </TableLayout>
     </RelativeLayout>
+    
+    <ImageView
+        android:id="@+id/img_ayuda"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignBottom="@id/contenedor_organos"
+        android:src="@drawable/ayuda"
+        android:layout_marginLeft="@dimen/medium_margin"/>
+    
 </RelativeLayout>

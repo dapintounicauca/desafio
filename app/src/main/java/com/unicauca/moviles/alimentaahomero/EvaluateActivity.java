@@ -1,12 +1,17 @@
 package com.unicauca.moviles.alimentaahomero;
 
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -18,12 +23,14 @@ import java.util.Random;
 
 public class EvaluateActivity extends AppCompatActivity implements View.OnClickListener {
 
+    public static final String PREFS_NAME2 = "MyPrefsFile2";
+
     TextView num_pregunta, pregunta;
 
     String[] preguntas, respuestas;
     Integer num_pregunta_actual;
 
-    ImageView boca, esofago, estomago, higado, pancreas, delgado, grueso, ano, img_resultado;
+    ImageView boca, esofago, estomago, higado, pancreas, delgado, grueso, ano, img_resultado, img_ayuda;
 
     MediaPlayer mp = new MediaPlayer();
 
@@ -34,6 +41,7 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
     TableLayout vidas;
     Integer num_intentos;
     Integer num_corazones;
+    CheckBox dontShowAgain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +80,11 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
         delgado.setOnClickListener(this);
         grueso.setOnClickListener(this);
         ano.setOnClickListener(this);
+
+        img_ayuda = (ImageView) findViewById(R.id.img_ayuda);
+        img_ayuda.setOnClickListener(this);
+
+        show_dialog_help();
     }
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -117,30 +130,45 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
 
-        if(getResources().getResourceEntryName(v.getId()).equals(respuestas[num_pregunta_actual-1])) {
-            img_resultado.setImageResource(R.drawable.yuju);
-            pintar_estrella(0); //con 0 para pintar como correcta la estrella
-            sonar(0);
-            if(num_pregunta_actual==10)
-                mostrar_resultado(1); //finaliza el juego al completar 10 preguntas
-            else
-                siguientePregunta();
-
+        if(v.getId() == R.id.img_ayuda)
+        {
+            LayoutInflater inflater = LayoutInflater.from(this);
+            View dialog_layout = inflater.inflate(R.layout.dialog_help_evaluate, null);
+            dontShowAgain = (CheckBox) dialog_layout.findViewById(R.id.cb_skip);
+            AlertDialog.Builder db = new AlertDialog.Builder(EvaluateActivity.this);
+            db.setView(dialog_layout);
+            db.setTitle("Indicaciones");
+            db.setPositiveButton("ENTENDIDO", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {}});
+            dontShowAgain.setVisibility(View.INVISIBLE);
+            db.show();
         }
         else {
-            if(num_corazones==0) //finaliza el juego al perder los 3 corazones
-            {
-                mostrar_resultado(0);
+            if(getResources().getResourceEntryName(v.getId()).equals(respuestas[num_pregunta_actual-1])) {
+                img_resultado.setImageResource(R.drawable.yuju);
+                pintar_estrella(0); //con 0 para pintar como correcta la estrella
+                sonar(0);
+                if(num_pregunta_actual==10)
+                    mostrar_resultado(1); //finaliza el juego al completar 10 preguntas
+                else
+                    siguientePregunta();
+
             }
-            img_resultado.setImageResource(R.drawable.doh);
-            num_intentos+=1; //maximo 3 fallos por pregunta
-            if(num_intentos==3){
-                perder_corazon();
-                num_intentos=0;
-                pintar_estrella(1); //con 1 para pintar como incorrecta la estrella
-                siguientePregunta(); //se salta la pregunta inten
+            else {
+                if(num_corazones==0) //finaliza el juego al perder los 3 corazones
+                {
+                    mostrar_resultado(0);
+                }
+                img_resultado.setImageResource(R.drawable.doh);
+                num_intentos+=1; //maximo 3 fallos por pregunta
+                if(num_intentos==3){
+                    perder_corazon();
+                    num_intentos=0;
+                    pintar_estrella(1); //con 1 para pintar como incorrecta la estrella
+                    siguientePregunta(); //se salta la pregunta inten
+                }
+                sonar(1);
             }
-            sonar(1);
         }
     }
 
@@ -194,6 +222,35 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
         ImageView corazon = (ImageView) fila.getChildAt(num_corazones -1); // Se obtiene el elemento de la fila
         corazon.setColorFilter(Color.LTGRAY); //quito el filtro para dejar visible la estrella
         num_corazones -=1;
+    }
+
+    public void show_dialog_help()
+    {
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View dialog_layout = inflater.inflate(R.layout.dialog_help_evaluate, null);
+        dontShowAgain = (CheckBox) dialog_layout.findViewById(R.id.cb_skip);
+        AlertDialog.Builder db = new AlertDialog.Builder(EvaluateActivity.this);
+        db.setView(dialog_layout);
+        db.setTitle("Indicaciones");
+        db.setPositiveButton("ENTENDIDO", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+
+                String checkBoxResult = "NOT checked";
+                if (dontShowAgain.isChecked())
+                    checkBoxResult = "checked";
+
+                SharedPreferences settings = getSharedPreferences(PREFS_NAME2, 0);
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putString("skipMessageEvaluate", checkBoxResult);
+                editor.commit();
+                return;
+            }
+        });
+        dontShowAgain.setVisibility(View.VISIBLE);
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME2, 0);
+        String skipMessage = settings.getString("skipMessageEvaluate", "NOT checked");
+        if (!skipMessage.equals("checked"))
+            db.show();
     }
 
 }

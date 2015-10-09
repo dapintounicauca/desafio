@@ -268,4 +268,12 @@
         android:layout_alignParentBottom="true"
         />
 
+    <ImageView
+        android:id="@+id/img_ayuda"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignBottom="@id/contenedor_organos"
+        android:src="@drawable/ayuda"
+        android:layout_marginLeft="@dimen/medium_margin"/>
+
 </RelativeLayout>

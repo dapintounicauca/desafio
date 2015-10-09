@@ -66,5 +66,9 @@
         <item>pt_boca</item>
     </string-array>
     <string name="title_activity_content">ContentActivity</string>
+    <string name="intro_indicacionLearn">Con el propósito de que usted utilice este módulo correctamente, le brindamos las siguientes indicaciones:</string>
+    <string name="txt_indicacion1Learn">Para conocer información sobre determinado órgano del Sistema Digestivo de Homero, sólo basta con presionar dicho organo.</string>
+    <string name="txt_indicacion2Learn">Para conocer el proceso digestivo que se lleva a cabo en determinado órgano, se debe arrastrar una fruta sobre dicho órgano.</string>
+    <string name="txt_skip_message">No volver a mostrar estas indicaciones.</string>
 
 </resources>

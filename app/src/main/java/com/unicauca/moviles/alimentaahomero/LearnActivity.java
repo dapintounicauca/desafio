@@ -2,13 +2,19 @@ package com.unicauca.moviles.alimentaahomero;
 
 import android.annotation.TargetApi;
 import android.app.FragmentManager;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.DragEvent;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -17,9 +23,13 @@ import android.widget.VideoView;
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class LearnActivity extends AppCompatActivity implements View.OnTouchListener, View.OnDragListener, View.OnClickListener {
 
-    ImageView manzana, naranja, uvas, img_info;
+    public static final String PREFS_NAME = "MyPrefsFile1";
+    ImageView manzana, naranja, uvas, img_info, img_ayuda;
     LinearLayout contenedor_fr, boca, esofago, estomago, higado, pancreas, delgado, grueso, ano;
     TextView titulo_info, contenido_info;
+    CheckBox dontShowAgain;
+
+
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
@@ -59,7 +69,6 @@ public class LearnActivity extends AppCompatActivity implements View.OnTouchList
         grueso.setOnDragListener(this);
         ano.setOnDragListener(this);
 
-
         manzana = (ImageView) findViewById(R.id.img_manzana);
         naranja = (ImageView) findViewById(R.id.img_naranja);
         uvas = (ImageView) findViewById(R.id.img_uva);
@@ -69,6 +78,11 @@ public class LearnActivity extends AppCompatActivity implements View.OnTouchList
 
         contenedor_fr = (LinearLayout) findViewById(R.id.contenedor_frutas);
         contenedor_fr.setOnDragListener(this);
+
+        show_dialog_help();
+
+        img_ayuda = (ImageView) findViewById(R.id.img_ayuda);
+        img_ayuda.setOnClickListener(this);
     }
 
     @Override
@@ -209,6 +223,20 @@ public class LearnActivity extends AppCompatActivity implements View.OnTouchList
                 contenido_info.setText(info_organos[7]);
                 img_info.setImageResource(R.drawable.ano);
                 break;
+            case R.id.img_ayuda:
+                LayoutInflater inflater = LayoutInflater.from(this);
+                View dialog_layout = inflater.inflate(R.layout.dialog_help_learn, null);
+                dontShowAgain = (CheckBox) dialog_layout.findViewById(R.id.cb_skip);
+                AlertDialog.Builder db = new AlertDialog.Builder(LearnActivity.this);
+                db.setView(dialog_layout);
+                db.setTitle("Indicaciones");
+                db.setPositiveButton("ENTENDIDO", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+                dontShowAgain.setVisibility(View.INVISIBLE);
+                db.show();
+                break;
         }
     }
 
@@ -218,5 +246,34 @@ public class LearnActivity extends AppCompatActivity implements View.OnTouchList
         ContentActivity dialog = new ContentActivity();
         dialog.init(name);
         dialog.show(manager,"ContentActivity");
+    }
+
+    public void show_dialog_help()
+    {
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View dialog_layout = inflater.inflate(R.layout.dialog_help_learn, null);
+        dontShowAgain = (CheckBox) dialog_layout.findViewById(R.id.cb_skip);
+        AlertDialog.Builder db = new AlertDialog.Builder(LearnActivity.this);
+        db.setView(dialog_layout);
+        db.setTitle("Indicaciones");
+        db.setPositiveButton("ENTENDIDO", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+
+                String checkBoxResult = "NOT checked";
+                if (dontShowAgain.isChecked())
+                    checkBoxResult = "checked";
+
+                SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putString("skipMessageLearn", checkBoxResult);
+                editor.commit();
+                return;
+            }
+        });
+        dontShowAgain.setVisibility(View.VISIBLE);
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        String skipMessage = settings.getString("skipMessageLearn", "NOT checked");
+        if (!skipMessage.equals("checked"))
+            db.show();
     }
 }
