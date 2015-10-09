@@ -7,7 +7,7 @@
         android:id="@+id/img_fondo_evalua"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#8ae124"
+        android:background="#24e163"
         />
 
     <ImageView
@@ -24,7 +24,7 @@
         android:id="@+id/contenedor_preguntas"
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:background="#e8e8e8"
+        android:background="#00551e"
         android:layout_margin="@dimen/medium_margin"
         android:padding="5dp"
         android:layout_below="@id/img_titulo_intro">
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""
-            android:textColor="#000000"
+            android:textColor="#ffffff"
             android:textSize="40sp"
             android:layout_toRightOf="@id/img_pregunta"/>
 
@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/num_pregunta"
             android:layout_toRightOf="@id/img_pregunta"
-            android:textColor="#d2000000"
+            android:textColor="#d2ffffff"
             android:textSize="25sp"/>
     </RelativeLayout>
 
@@ -63,14 +63,16 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/contenedor_preguntas"
         android:orientation="vertical"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="@dimen/medium_margin"
+        android:layout_marginRight="@dimen/small_margin"
+        android:background="#C19A6B"
         android:padding="20dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Vidas:"
-            android:textSize="25sp"
-            android:textColor="#000000"/>
+            android:textSize="30sp"
+            android:textColor="#ffffff"/>
         <TableLayout
             android:id="@+id/tabla_vidas"
             android:layout_width="wrap_content"
@@ -96,8 +98,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Puntos: "
-            android:textSize="25sp"
-            android:textColor="#000000"/>
+            android:textSize="30sp"
+            android:textColor="#ffffff"/>
         <TableLayout
             android:id="@+id/tabla_estrellas"
             android:layout_width="wrap_content"
@@ -108,46 +110,46 @@
                 <ImageView android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/estrella"
-                    android:tint="@android:color/white"
+                    android:visibility="invisible"
                     />
                 <ImageView android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/estrella"
-                    android:tint="@android:color/white"/>
+                    android:visibility="invisible"/>
                 <ImageView android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/estrella"
-                    android:tint="@android:color/white"/>
+                    android:visibility="invisible"/>
                 <ImageView android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/estrella"
-                    android:tint="@android:color/white"/>
+                    android:visibility="invisible"/>
                 <ImageView android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/estrella"
-                    android:tint="@android:color/white"/>
+                    android:visibility="invisible"/>
             </TableRow>
             <TableRow>
                 <ImageView android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/estrella"
-                    android:tint="@android:color/white"/>
+                    android:visibility="invisible"/>
                 <ImageView android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/estrella"
-                    android:tint="@android:color/white"/>
+                    android:visibility="invisible"/>
                 <ImageView android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/estrella"
-                    android:tint="@android:color/white"/>
+                    android:visibility="invisible"/>
                 <ImageView android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/estrella"
-                    android:tint="@android:color/white"/>
+                    android:visibility="invisible"/>
                 <ImageView android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/estrella"
-                    android:tint="@android:color/white"/>
+                    android:visibility="invisible"/>
             </TableRow>
         </TableLayout>
 
@@ -157,7 +159,7 @@
         android:id="@+id/contenedor_organos"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:background="#e8e8e8"
+        android:background="#00551e"
         android:layout_below="@id/contenedor_preguntas"
         android:layout_toRightOf="@+id/puntajes"
         android:layout_alignParentRight="true"
@@ -268,9 +270,9 @@
 
     <ImageView
         android:id="@+id/img_ayuda"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_alignBottom="@id/contenedor_organos"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentRight="true"
         android:src="@drawable/ayuda"
         android:layout_marginLeft="@dimen/medium_margin"/>
 

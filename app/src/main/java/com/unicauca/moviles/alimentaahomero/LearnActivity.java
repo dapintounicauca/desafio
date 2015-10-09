@@ -106,7 +106,7 @@ public class LearnActivity extends AppCompatActivity implements View.OnTouchList
         switch (action)
         {
             case DragEvent.ACTION_DRAG_STARTED:
-                titulo_info.setText("");
+                titulo_info.setText("hum...y ahora qué?");
                 img_info.setImageResource(R.drawable.homer_info);
                 switch (view.getId()) {
                     case R.id.img_manzana:

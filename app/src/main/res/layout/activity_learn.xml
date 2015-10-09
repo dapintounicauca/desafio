@@ -22,7 +22,7 @@
         android:id="@+id/contenedor_info"
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:background="#e8e8e8"
+        android:background="#007286"
         android:layout_margin="@dimen/medium_margin"
         android:padding="10dp"
         android:layout_below="@id/img_titulo_intro"
@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/titulo_info_aprender"
-            android:textColor="#000000"
+            android:textColor="#ffffff"
             android:textSize="40sp"
             android:layout_toRightOf="@id/img_info"/>
 
@@ -51,7 +51,7 @@
             android:text="@string/contenido_info_aprender"
             android:layout_below="@id/titulo_info"
             android:layout_toRightOf="@id/img_info"
-            android:textColor="#d2000000"
+            android:textColor="#d2ffffff"
             android:textSize="25sp"/>
     </RelativeLayout>
 
@@ -59,17 +59,20 @@
         android:id="@+id/contenedor_frutas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
         android:orientation="vertical"
-        android:background="#e8e8e8"
+        android:background="#C19A6B"
         android:layout_below="@id/contenedor_info"
-        android:layout_marginLeft="@dimen/medium_margin">
+        android:layout_marginLeft="@dimen/medium_margin"
+        android:padding="@dimen/small_margin"
+        >
 
         <TextView
             android:text="Frutas"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
             android:gravity="center"
             />
 
@@ -100,7 +103,7 @@
         android:id="@+id/contenedor_organos"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:background="#e8e8e8"
+        android:background="#007286"
         android:layout_below="@id/contenedor_info"
         android:layout_toRightOf="@+id/contenedor_frutas"
         android:layout_alignParentRight="true"
@@ -208,9 +211,9 @@
     
     <ImageView
         android:id="@+id/img_ayuda"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_alignBottom="@id/contenedor_organos"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentRight="true"
         android:src="@drawable/ayuda"
         android:layout_marginLeft="@dimen/medium_margin"/>
     

@@ -146,7 +146,7 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
         else {
             if(getResources().getResourceEntryName(v.getId()).equals(respuestas[num_pregunta_actual-1])) {
                 img_resultado.setImageResource(R.drawable.yuju);
-                pintar_estrella(0); //con 0 para pintar como correcta la estrella
+                pintar_estrella(); //hace visible una estrella en puntaje
                 sonar(0);
                 if(num_pregunta_actual==10)
                     mostrar_resultado(1); //finaliza el juego al completar 10 preguntas
@@ -164,7 +164,6 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
                 if(num_intentos==3){
                     perder_corazon();
                     num_intentos=0;
-                    pintar_estrella(1); //con 1 para pintar como incorrecta la estrella
                     siguientePregunta(); //se salta la pregunta inten
                 }
                 sonar(1);
@@ -191,22 +190,19 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
         mp.seekTo(0);
         mp.start();
     }
-    public void pintar_estrella(int tipo)
+
+    public void pintar_estrella()
     {
         int n_fil=0;
-        int n_col=num_pregunta_actual-1;
-        if(num_pregunta_actual>=6){ /*desde las sexta a la decima pregunta*/
+        int n_col=total_estrellas;
+        if(total_estrellas>=6){ /*desde las sexta a la decima pregunta*/
             n_fil=1;
             n_col-=5;
         }
         TableRow fila = (TableRow)estrellas.getChildAt(n_fil); // Se obtiene la fila X
         ImageView estrella = (ImageView)fila.getChildAt(n_col); // Se obtiene el elemento de la fila
-        if(tipo==1) //si perdio todas las vidas se pierde la estrella
-            estrella.setColorFilter(Color.DKGRAY); //quito el filtro para dejar visible la estrella
-        else {
-            total_estrellas+=1;
-            estrella.setColorFilter(0); //quito el filtro para dejar visible la estrella
-        }
+        estrella.setVisibility(View.VISIBLE);
+        total_estrellas+=1;
     }
     public void mostrar_resultado(int tipo) {
         if(tipo==0){  /*pierde el juego*/
@@ -220,7 +216,7 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
     public void perder_corazon(){
         TableRow fila = (TableRow) vidas.getChildAt(0); // Se obtiene la fila X
         ImageView corazon = (ImageView) fila.getChildAt(num_corazones -1); // Se obtiene el elemento de la fila
-        corazon.setColorFilter(Color.LTGRAY); //quito el filtro para dejar visible la estrella
+        corazon.setVisibility(View.INVISIBLE);
         num_corazones -=1;
     }
 
