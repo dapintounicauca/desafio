@@ -2,6 +2,7 @@ package com.unicauca.moviles.alimentaahomero;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +25,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         aprender = (Button) findViewById(R.id.btn_aprender);
         evaluar = (Button) findViewById(R.id.btn_evaluar);
         salir = (ImageView) findViewById(R.id.img_salir);
+
+        Typeface typeface =Typeface.createFromAsset(getAssets(),"fonts/BradBunR.ttf");
+        aprender.setTypeface(typeface);
+        evaluar.setTypeface(typeface);
 
         aprender.setOnClickListener(this);
         evaluar.setOnClickListener(this);

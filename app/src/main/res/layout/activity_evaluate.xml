@@ -24,9 +24,9 @@
         android:id="@+id/contenedor_preguntas"
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:background="#00551e"
+        android:background="@drawable/table"
         android:layout_margin="@dimen/medium_margin"
-        android:padding="5dp"
+        android:padding="@dimen/small_margin"
         android:layout_below="@id/img_titulo_intro">
 
         <ImageView
@@ -42,7 +42,8 @@
             android:id="@+id/num_pregunta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="Pregunta 1"
+            android:padding="@dimen/small_margin"
             android:textColor="#ffffff"
             android:textSize="40sp"
             android:layout_toRightOf="@id/img_pregunta"/>
@@ -53,23 +54,29 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/num_pregunta"
             android:layout_toRightOf="@id/img_pregunta"
+            android:padding="@dimen/small_margin"
             android:textColor="#d2ffffff"
-            android:textSize="25sp"/>
+            android:textSize="30sp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
     </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/puntajes"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="250dp"
         android:layout_below="@+id/contenedor_preguntas"
         android:orientation="vertical"
+        android:background="@drawable/marco"
         android:layout_marginLeft="@dimen/medium_margin"
-        android:layout_marginRight="@dimen/small_margin"
-        android:background="#C19A6B"
-        android:padding="20dp">
+        android:padding="20dp"
+        android:layout_toLeftOf="@+id/img_titulo_intro"
+        android:layout_toStartOf="@+id/img_titulo_intro">
         <TextView
+            android:id="@+id/txt_vidas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingTop="35dp"
             android:text="Vidas:"
             android:textSize="30sp"
             android:textColor="#ffffff"/>
@@ -81,20 +88,21 @@
             >
             <TableRow>
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:src="@drawable/corazon"/>
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:src="@drawable/corazon"/>
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:src="@drawable/corazon" />
             </TableRow>
         </TableLayout>
         <TextView
+            android:id="@+id/txt_puntos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Puntos: "
@@ -107,47 +115,47 @@
             android:paddingLeft="15dp"
             >
             <TableRow>
-                <ImageView android:layout_width="40dp"
-                    android:layout_height="40dp"
+                <ImageView android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:src="@drawable/estrella"
                     android:visibility="invisible"
                     />
-                <ImageView android:layout_width="40dp"
-                    android:layout_height="40dp"
+                <ImageView android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:src="@drawable/estrella"
                     android:visibility="invisible"/>
-                <ImageView android:layout_width="40dp"
-                    android:layout_height="40dp"
+                <ImageView android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:src="@drawable/estrella"
                     android:visibility="invisible"/>
-                <ImageView android:layout_width="40dp"
-                    android:layout_height="40dp"
+                <ImageView android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:src="@drawable/estrella"
                     android:visibility="invisible"/>
-                <ImageView android:layout_width="40dp"
-                    android:layout_height="40dp"
+                <ImageView android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:src="@drawable/estrella"
                     android:visibility="invisible"/>
             </TableRow>
             <TableRow>
-                <ImageView android:layout_width="40dp"
-                    android:layout_height="40dp"
+                <ImageView android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:src="@drawable/estrella"
                     android:visibility="invisible"/>
-                <ImageView android:layout_width="40dp"
-                    android:layout_height="40dp"
+                <ImageView android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:src="@drawable/estrella"
                     android:visibility="invisible"/>
-                <ImageView android:layout_width="40dp"
-                    android:layout_height="40dp"
+                <ImageView android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:src="@drawable/estrella"
                     android:visibility="invisible"/>
-                <ImageView android:layout_width="40dp"
-                    android:layout_height="40dp"
+                <ImageView android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:src="@drawable/estrella"
                     android:visibility="invisible"/>
-                <ImageView android:layout_width="40dp"
-                    android:layout_height="40dp"
+                <ImageView android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:src="@drawable/estrella"
                     android:visibility="invisible"/>
             </TableRow>
@@ -159,30 +167,29 @@
         android:id="@+id/contenedor_organos"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:background="#00551e"
+        android:background="@drawable/vertical_table"
         android:layout_below="@id/contenedor_preguntas"
         android:layout_toRightOf="@+id/puntajes"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="@dimen/medium_margin"
         android:layout_marginRight="@dimen/medium_margin"
+        android:layout_marginLeft="10dp"
+        android:padding="@dimen/medium_margin"
         >
-        <ImageView
-            android:id="@+id/img_digestivocompleto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/sistema_digestivo"
-            android:layout_alignParentTop="true" />
         <TableLayout
-            android:layout_width="200dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
             android:layout_centerHorizontal="true"
+            android:background="@drawable/sistema_digestivo"
             android:stretchColumns="*">
-            <TableRow android:layout_weight="2.9">
+            <TableRow android:layout_weight="3">
+                <ImageView /><ImageView /><ImageView /><ImageView />
                 <ImageView /><ImageView /><ImageView /><ImageView />
             </TableRow>
             <TableRow
                 android:layout_weight="0.5">
+                <ImageView /><ImageView />
                 <ImageView android:layout_height="wrap_content" />
                 <ImageView
                     android:id="@+id/pt_boca"
@@ -193,6 +200,7 @@
             </TableRow>
             <TableRow
                 android:layout_weight="1.4">
+                <ImageView /><ImageView />
                 <ImageView />
                 <ImageView />
                 <ImageView android:id="@+id/pt_esofago"
@@ -202,6 +210,7 @@
             </TableRow>
             <TableRow
                 android:layout_weight="1.5">
+                <ImageView /><ImageView />
                 <ImageView
                     android:id="@+id/pt_higado"
                     android:layout_width="match_parent"
@@ -215,7 +224,8 @@
                     android:background="#55fe4c6a"/>
             </TableRow>
             <TableRow
-                android:layout_weight="0.5">
+                android:layout_weight="0.6">
+                <ImageView /><ImageView />
                 <ImageView />
                 <ImageView
                     android:id="@+id/pt_pancreas"
@@ -224,9 +234,9 @@
                     android:background="#b843ec41"
                     android:layout_span="2"/>
             </TableRow>
-            <TableRow>
+            <TableRow android:layout_weight="0.2">
+                <ImageView /><ImageView />
                 <RelativeLayout
-                    android:layout_weight="1"
                     android:layout_span="4">
                     <ImageView
                         android:id="@+id/pt_grueso"
@@ -244,10 +254,12 @@
                         android:layout_alignBottom="@+id/pt_grueso"
                         />
                 </RelativeLayout>
+                <ImageView />
+                <ImageView />
             </TableRow>
             <TableRow
                 android:layout_weight="0.8">
-                <ImageView />
+                <ImageView /><ImageView /><ImageView />
                 <ImageView
                     android:id="@+id/pt_ano"
                     android:background="#5500ff11"

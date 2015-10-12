@@ -3,6 +3,7 @@ package com.unicauca.moviles.alimentaahomero;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.support.v7.app.AlertDialog;
@@ -25,7 +26,9 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
 
     public static final String PREFS_NAME2 = "MyPrefsFile2";
 
-    TextView num_pregunta, pregunta;
+    TextView num_pregunta, pregunta, txt_vidas, txt_puntos;
+    TextView txt_indicacion;
+    Typeface typeface;
 
     String[] preguntas, respuestas;
     Integer num_pregunta_actual;
@@ -50,6 +53,10 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
 
         num_pregunta = (TextView) findViewById(R.id.num_pregunta);
         pregunta = (TextView) findViewById(R.id.pregunta);
+        txt_puntos = (TextView) findViewById(R.id.txt_puntos);
+        txt_vidas = (TextView) findViewById(R.id.txt_vidas);
+
+
 
         generarPreguntasAleatorias();
         num_pregunta.setText("Pregunta 1");
@@ -71,6 +78,13 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
 
         estrellas = (TableLayout) findViewById(R.id.tabla_estrellas);
         vidas = (TableLayout) findViewById(R.id.tabla_vidas);
+
+        typeface = Typeface.createFromAsset(getAssets(),"fonts/BradBunR.ttf");
+        pregunta .setTypeface(typeface);
+        num_pregunta.setTypeface(typeface);
+        txt_vidas.setTypeface(typeface);
+        txt_puntos.setTypeface(typeface);
+
 
         boca.setOnClickListener(this);
         esofago.setOnClickListener(this);
@@ -225,9 +239,14 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
         LayoutInflater inflater = LayoutInflater.from(this);
         View dialog_layout = inflater.inflate(R.layout.dialog_help_evaluate, null);
         dontShowAgain = (CheckBox) dialog_layout.findViewById(R.id.cb_skip);
+
+
+        txt_indicacion = (TextView) dialog_layout.findViewById(R.id.txt_indicacion_evalua);
+
+        txt_indicacion.setTypeface(typeface);
+
         AlertDialog.Builder db = new AlertDialog.Builder(EvaluateActivity.this);
         db.setView(dialog_layout);
-        db.setTitle("Indicaciones");
         db.setPositiveButton("ENTENDIDO", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
 

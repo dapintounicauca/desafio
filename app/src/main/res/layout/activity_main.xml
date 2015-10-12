@@ -1,4 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context=".MainActivity"
     android:background="@drawable/cielo_intro">
@@ -14,8 +15,9 @@
         android:layout_alignLeft="@+id/btn_aprender"
         android:layout_alignStart="@+id/btn_aprender" />
 
-    <Button
-        style="@style/ButtonAccent"
+    <android.support.v7.widget.AppCompatButton
+        app:theme="@style/ButtonAccent"
+        android:theme="@style/ButtonAccent"
         android:id="@+id/btn_aprender"
         android:layout_width="230dp"
         android:layout_height="80dp"
@@ -25,8 +27,8 @@
         android:layout_marginTop="@dimen/medium_margin"
         android:textSize="@dimen/txt_size_btn"
         />
-    <Button
-        style="@style/ButtonAccent"
+    <android.support.v7.widget.AppCompatButton
+        app:theme="@style/ButtonAccent"
         android:id="@+id/btn_evaluar"
         android:layout_width="230dp"
         android:layout_height="80dp"

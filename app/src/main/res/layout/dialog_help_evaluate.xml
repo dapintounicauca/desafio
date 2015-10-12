@@ -4,7 +4,7 @@
     android:padding="15dp">
 
     <TextView
-        android:id="@+id/txt_intro_indicaciones"
+        android:id="@+id/txt_indicacion_evalua"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/intro_indicacionLearn"
