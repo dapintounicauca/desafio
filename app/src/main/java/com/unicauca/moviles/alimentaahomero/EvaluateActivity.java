@@ -1,12 +1,9 @@
 package com.unicauca.moviles.alimentaahomero;
 
 import android.content.DialogInterface;
-<<<<<<< HEAD
-=======
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
->>>>>>> origin/master
 import android.graphics.Typeface;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -16,6 +13,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TableLayout;
@@ -37,7 +35,7 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
     String[] preguntas, respuestas;
     Integer num_pregunta_actual;
 
-    ImageView boca, esofago, estomago, higado, pancreas, delgado, grueso, ano, img_resultado, img_ayuda;
+    ImageView boca, esofago, estomago, higado, pancreas, delgado, grueso, ano, img_resultado, img_ayuda, img_home;
 
     MediaPlayer mp = new MediaPlayer();
 
@@ -102,6 +100,9 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
         img_ayuda = (ImageView) findViewById(R.id.img_ayuda);
         img_ayuda.setOnClickListener(this);
 
+        img_home = (ImageView) findViewById(R.id.img_home);
+        img_home.setOnClickListener(this);
+
         show_dialog_help();
     }
     @Override
@@ -163,36 +164,40 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
         }
         else if(v.getId() == R.id.btn_jugar)
         {
-            Intent intent = new Intent(this, LearnActivity.class);
+            Intent intent = new Intent(this, EvaluateActivity.class);
             startActivity(intent);
+        }
+        else if(v.getId() == R.id.img_home)
+        {
+            this.finish();
         }
         else if(v.getId() == R.id.btn_salir)
         {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+            this.finish();
         }
         else {
             if(getResources().getResourceEntryName(v.getId()).equals(respuestas[num_pregunta_actual-1])) {
                 img_resultado.setImageResource(R.drawable.yuju);
                 pintar_estrella(); //hace visible una estrella en puntaje
                 sonar(0);
-                if(num_pregunta_actual==10)
+                if(total_estrellas==10)
                     mostrar_resultado(1); //finaliza el juego al completar 10 preguntas
+                else if(num_pregunta_actual==10)
+                    mostrar_resultado(0);
                 else
                     siguientePregunta();
-
             }
             else {
-                if(num_corazones==0) //finaliza el juego al perder los 3 corazones
-                {
-                    mostrar_resultado(0);
-                }
                 img_resultado.setImageResource(R.drawable.doh);
                 num_intentos+=1; //maximo 3 fallos por pregunta
                 if(num_intentos==3){
                     perder_corazon();
-                    num_intentos=0;
-                    siguientePregunta(); //se salta la pregunta inten
+                    if(num_corazones==0 || num_pregunta_actual==10){ //finaliza el juego al perder los 3 corazones
+                        mostrar_resultado(0);
+                    }else {
+                        num_intentos = 0;
+                        siguientePregunta(); //se salta la pregunta inten
+                    }
                 }
                 sonar(1);
             }
@@ -222,7 +227,7 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
     {
         int n_fil=0;
         int n_col=total_estrellas;
-        if(total_estrellas>=6){ /*desde las sexta a la decima pregunta*/
+        if(total_estrellas>=5){ /*desde las sexta a la decima pregunta*/
             n_fil=1;
             n_col-=5;
         }
@@ -284,32 +289,68 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
         if (!skipMessage.equals("checked"))*/
             db.show();
     }
-
     public void show_dialog_result(int opc)
     {
         LayoutInflater inflater = LayoutInflater.from(this);
         View dialog_result = inflater.inflate(R.layout.dialog_result, null);
 
-        TextView titulo = (TextView) dialog_result.findViewById(R.id.titulo_resultado);
+        ImageView titulo = (ImageView) dialog_result.findViewById(R.id.titulo_resultado);
         TextView contenido = (TextView) dialog_result.findViewById(R.id.txt_resultado);
         ImageView imagen = (ImageView) dialog_result.findViewById(R.id.img_resultado);
+        TableLayout estrellas_dialog = (TableLayout) dialog_result.findViewById(R.id.tabla_estrellas_dialog);
 
-        ImageView btn_jugar = (ImageView) dialog_result.findViewById(R.id.img_resultado);
-        ImageView btn_salir = (ImageView) dialog_result.findViewById(R.id.img_resultado);
+        Button btn_jugar = (Button) dialog_result.findViewById(R.id.btn_jugar);
+        Button btn_salir = (Button) dialog_result.findViewById(R.id.btn_salir);
 
-        if(opc == 0) //Gano
+        if(opc == 1) //Gano
         {
-            titulo.setText("Gano");
-            contenido.setText("Bien hecho!");
+            titulo.setImageResource(R.drawable.excelente);
+            contenido.setText(R.string.mensaje_final_bien);
+            contenido.setTypeface(typeface);
             imagen.setImageResource(R.drawable.has_ganado);
+
+            for (int i=0;i<2;i++){
+                for(int j=0;j<5;j++){
+                    TableRow fila = (TableRow)estrellas_dialog.getChildAt(i); // Se obtiene la fila X
+                    ImageView estrella = (ImageView)fila.getChildAt(j); // Se obtiene el elemento de la fila
+                    estrella.setVisibility(View.VISIBLE);
+                }
+            }
         }
         else { //Perdio
-            titulo.setText("Perdio");
-            contenido.setText("Mal hecho!");
-            imagen.setImageResource(R.drawable.has_ganado);
+            titulo.setImageResource(R.drawable.sigue);
+            contenido.setText(R.string.mensaje_final_mal);
+            contenido.setTypeface(typeface);
+            imagen.setImageResource(R.drawable.has_perdido);
+            int cont = 0;
+            int band = 0;
+            for (int i=0;i<2;i++){
+                for(int j=0;j<5;j++){
+                    if(cont<total_estrellas){
+                        TableRow fila = (TableRow)estrellas_dialog.getChildAt(i); // Se obtiene la fila X
+                        ImageView estrella = (ImageView)fila.getChildAt(j); // Se obtiene el elemento de la fila
+                        estrella.setVisibility(View.VISIBLE);
+                        cont++;
+                    }else
+                        band=1;
+                }
+                if(band==1)
+                    break;
+            }
         }
+
+        btn_jugar.setTextColor(Color.parseColor("#007286"));
+        btn_jugar.setTypeface(typeface);
+        btn_salir.setTextColor(Color.parseColor("#007286"));
+        btn_salir.setTypeface(typeface);
 
         btn_jugar.setOnClickListener(this);
         btn_salir.setOnClickListener(this);
+
+        AlertDialog.Builder db = new AlertDialog.Builder(EvaluateActivity.this);
+        db.setView(dialog_result);
+        db.show();
+        
+
     }
 }

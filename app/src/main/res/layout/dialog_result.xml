@@ -1,52 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:background="@drawable/cuaderno_dialog">
 
-    <TextView
+    <ImageView
+        android:id="@+id/img_resultado"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/has_ganado"
+        android:layout_marginTop="50dp"
+        />
+    <ImageView
         android:id="@+id/titulo_resultado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Has ganado"
+        android:layout_centerInParent="true"
+        android:src="@drawable/excelente"
         android:gravity="center"
+        android:layout_below="@+id/img_resultado"
         />
 
     <TextView
         android:id="@+id/txt_resultado"
-        android:layout_width="200dp"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/titulo_resultado"
-        android:text="¡Bien hecho!"/>
+        android:gravity="center"
+        android:textSize="30sp"
+        android:text="@string/mensaje_final_bien"
+        android:textColor="#000000"
+        android:layout_below="@+id/titulo_resultado"
+        android:layout_centerHorizontal="true" />
 
-    <ImageView
-        android:id="@+id/img_resultado"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_below="@id/titulo_resultado"
-        android:layout_toRightOf="@id/txt_resultado"
-        android:src="@drawable/has_ganado"
-        />
+    <TableLayout
+        android:id="@+id/tabla_estrellas_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_resultado"
+        android:layout_centerInParent="true"
+        android:paddingLeft="15dp"
+        >
+        <TableRow>
+            <ImageView android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/estrella"
+                android:visibility="invisible"/>
+            <ImageView android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/estrella"
+                android:visibility="invisible"/>
+            <ImageView android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/estrella"
+                android:visibility="invisible"/>
+            <ImageView android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/estrella"
+                android:visibility="invisible"/>
+            <ImageView android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/estrella"
+                android:visibility="invisible"/>
+        </TableRow>
+        <TableRow>
+            <ImageView android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/estrella"
+                android:visibility="invisible"/>
+            <ImageView android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/estrella"
+                android:visibility="invisible"/>
+            <ImageView android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/estrella"
+                android:visibility="invisible"/>
+            <ImageView android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/estrella"
+                android:visibility="invisible"/>
+            <ImageView android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/estrella"
+                android:visibility="invisible"/>
+        </TableRow>
+    </TableLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_alignParentBottom="true">
+        android:layout_below="@+id/tabla_estrellas_dialog"
+        android:gravity="right"
+        android:layout_marginTop="250dp"
+
+        >
 
         <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:id="@+id/btn_jugar"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:gravity="center"
-            android:text="Volver a jugar" />
-
+            android:text="Volver a jugar"
+            android:textSize="30sp"/>
         <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:id="@+id/btn_salir"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:gravity="center"
-            android:text="Salir"/>
+            android:text="Salir"
+            android:textSize="30sp"/>
 
     </LinearLayout>
 </RelativeLayout>
