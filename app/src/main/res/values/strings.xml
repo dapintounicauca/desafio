@@ -77,5 +77,7 @@
     <string name="txt_indicacion2Evaluate">Debes presionar el órgano que tu consideres responde la pregunta.</string>
     <string name="txt_indicacion3Evaluate">Si respondes bien, ganas una estrella, ¡Vé por las 10!.</string>
     <string name="txt_indicacion4Evaluate">Si respondes mal 3 veces, pierdes un corazón, ¡Cuídalos, solo tienes 3!.</string>
+    <string name="txt_vidas">Vidas:</string>
+    <string name="txt_puntos">Puntos:</string>
 
 </resources>

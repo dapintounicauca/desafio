@@ -9,5 +9,9 @@
     <color name="rojo_oscuro">#ab0000</color>
     <color name="azul_oscuro">#e100064b</color>
     <color name="cafe">#703515</color>
+    <color name="fondo_evaluate">#24e163</color>
+    <color name="azul_transparente">#551547df</color>
+    <color name="fondo_aprender">#00c2e6</color>
+
 
 </resources>

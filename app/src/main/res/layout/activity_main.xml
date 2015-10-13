@@ -6,10 +6,10 @@
 
     <ImageView
         android:id="@+id/img_titulo_intro"
-        android:layout_width="310dp"
-        android:layout_height="260dp"
+        android:layout_width="@dimen/width_titulo_principal"
+        android:layout_height="@dimen/height_titulo_principal"
         android:background="@drawable/titulo_intro"
-        android:layout_margin="25dp"
+        android:layout_margin="@dimen/large_margin"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignLeft="@+id/btn_aprender"
@@ -19,18 +19,19 @@
         app:theme="@style/ButtonAccent"
         android:theme="@style/ButtonAccent"
         android:id="@+id/btn_aprender"
-        android:layout_width="230dp"
-        android:layout_height="80dp"
+        android:layout_width="@dimen/width_button"
+        android:layout_height="@dimen/padding_txt_pregunta"
         android:text="@string/txt_btn_aprender"
         android:layout_below="@+id/img_titulo_intro"
         android:layout_marginLeft="@dimen/medium_margin"
         android:layout_marginTop="@dimen/medium_margin"
         android:textSize="@dimen/txt_size_btn" />
+
     <android.support.v7.widget.AppCompatButton
         app:theme="@style/ButtonAccent"
         android:id="@+id/btn_evaluar"
-        android:layout_width="230dp"
-        android:layout_height="80dp"
+        android:layout_width="@dimen/width_button"
+        android:layout_height="@dimen/padding_txt_pregunta"
         android:text="@string/txt_btn_evaluar"
         android:layout_below="@+id/btn_aprender"
         android:layout_marginLeft="@dimen/medium_margin"
@@ -39,8 +40,8 @@
 
     <ImageView
         android:id="@+id/img_homero_intro"
-        android:layout_width="260dp"
-        android:layout_height="270dp"
+        android:layout_width="@dimen/height_titulo_principal"
+        android:layout_height="wrap_content"
         android:background="@drawable/homero_intro"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
@@ -49,8 +50,8 @@
 
     <ImageView
         android:id="@+id/img_salir"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="@dimen/size_fruit"
+        android:layout_height="@dimen/size_fruit"
         android:layout_alignParentBottom="true"
         android:src="@drawable/salir"
         android:layout_marginLeft="@dimen/small_margin"

@@ -6,13 +6,13 @@
         android:id="@+id/img_fondo_aprende"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#00c2e6"
+        android:background="@color/fondo_aprender"
         />
 
     <ImageView
         android:id="@+id/img_titulo_intro"
-        android:layout_width="300dp"
-        android:layout_height="140dp"
+        android:layout_width="@dimen/width_title_app"
+        android:layout_height="@dimen/height_tittle_app"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:background="@drawable/titulo_intro"
@@ -21,7 +21,7 @@
     <RelativeLayout
         android:id="@+id/contenedor_info"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="@dimen/height_preguntas"
         android:background="@drawable/cuaderno"
         android:layout_margin="@dimen/medium_margin"
         android:padding="@dimen/small_margin"
@@ -29,8 +29,8 @@
         >
         <ImageView
             android:id="@+id/img_info"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/tam_img_learn"
+            android:layout_height="@dimen/tam_img_learn"
             android:src="@drawable/homer_info"
             android:layout_marginRight="@dimen/little_margin"
             android:layout_centerVertical="true"
@@ -75,9 +75,9 @@
             <TextView
                 android:id="@+id/txt_frutas"
                 android:text="Frutas"
-                android:layout_width="100dp"
+                android:layout_width="@dimen/tam_img_learn"
                 android:layout_height="wrap_content"
-                android:textColor="#ffffff"
+                android:textColor="@android:color/white"
                 android:textSize="@dimen/txt_size_small"
                 android:gravity="center"
                 />
@@ -138,7 +138,6 @@
                         android:id="@+id/pt_boca"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#000033cc"
                         android:layout_span="2" android:orientation="vertical"/>
                 </TableRow>
                 <TableRow
@@ -150,7 +149,7 @@
                         android:id="@+id/pt_esofago"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#0000ff00" android:orientation="vertical"/>
+                        android:orientation="vertical"/>
                 </TableRow>
                 <TableRow
                     android:layout_weight="1.5">
@@ -159,13 +158,12 @@
                         android:id="@+id/pt_higado"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#00780018"
                         android:layout_span="3" android:orientation="vertical"/>
                     <LinearLayout
                         android:id="@+id/pt_estomago"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#00fe4c6a" android:orientation="vertical"/>
+                        android:orientation="vertical"/>
                 </TableRow>
                 <TableRow
                     android:layout_weight="0.5">
@@ -174,7 +172,6 @@
                         android:id="@+id/pt_pancreas"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#0043ec41"
                         android:layout_span="2" android:orientation="vertical"/>
                 </TableRow>
                 <TableRow android:layout_weight="1.8">
@@ -184,16 +181,14 @@
                         android:layout_height="match_parent">
                         <LinearLayout
                             android:id="@+id/pt_grueso"
-                            android:background="#007300ff"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="vertical"
                             />
                         <LinearLayout
                             android:id="@+id/pt_delgado"
-                            android:background="#0034ec0f"
-                            android:layout_width="150dp"
-                            android:layout_height="120dp"
+                            android:layout_width="@dimen/width_delgado"
+                            android:layout_height="@dimen/size_delgado_evaluate"
                             android:layout_centerHorizontal="true"
                             android:layout_alignBottom="@+id/pt_grueso"
                             android:orientation="vertical"
@@ -206,7 +201,6 @@
                     <ImageView /><ImageView /><ImageView />
                     <LinearLayout
                         android:id="@+id/pt_ano"
-                        android:background="#0000ff11"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_span="2"
@@ -220,17 +214,17 @@
     </RelativeLayout>
     <ImageView
         android:id="@+id/img_ayuda"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="@dimen/size_fruit"
+        android:layout_height="@dimen/size_fruit"
         android:layout_alignParentRight="true"
         android:src="@drawable/ayuda"
         android:layout_marginLeft="@dimen/medium_margin"/>
 
     <ImageView
         android:id="@+id/img_home"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="@dimen/size_fruit"
+        android:layout_height="@dimen/size_fruit"
         android:src="@drawable/home"
         android:layout_marginLeft="@dimen/small_margin"/>
-    
+
 </RelativeLayout>
