@@ -1,43 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
     android:background="@drawable/cuaderno_dialog"
-    android:padding="20dp">
+    android:padding="50dp">
 
     <TextView
-        android:id="@+id/txt_indicacion_titulo"
+        android:id="@+id/txt_indicacion_evaluate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Indicaciones modo Evaular"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:text="@string/intro_indicacion_evaluate"
+        android:textColor="@color/rojo_oscuro"
         android:layout_centerHorizontal="true"
-        android:textColor="#960000"
-        android:textSize="45sp"
-        android:paddingLeft="100dp"
-        android:layout_marginTop="40dp"
-        />
+        android:paddingLeft="50dp"
+        android:paddingRight="@dimen/medium_margin"
+        android:layout_marginTop="@dimen/medium_margin"/>
+
     <TextView
-        android:id="@+id/txt_indicacion_evalua"
+        android:id="@+id/txt_indicacion1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/intro_indicacionLearn"
-        android:layout_centerHorizontal="true"
-        android:textColor="#000469"
-        android:textSize="40sp"
-        android:paddingLeft="100dp"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/txt_indicacion_titulo"
+        android:paddingLeft="50dp"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_below="@id/txt_indicacion_evaluate"
+        android:text="@string/txt_indicacion1Evaluate"
+        android:layout_centerVertical="true"
+        android:textColor="@color/azul_oscuro"
+        android:textSize="30sp"
         />
 
-    <!--Aqui va el diseño-->
+    <RelativeLayout
+        android:id="@+id/indicacion1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_indicacion1"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:paddingLeft="60dp"
+        android:paddingRight="20dp"
+        >
+        <ImageView
+            android:layout_marginTop="@dimen/medium_margin"
+            android:id="@+id/img_indicacion1"
+            android:layout_width="200dp"
+            android:layout_height="300dp"
+            android:src="@drawable/indicacion1"
+            android:layout_marginRight="30dp"/>
+
+
+        <TextView
+            android:id="@+id/txt_indicacion2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_indicacion2Evaluate"
+            android:layout_toRightOf="@id/img_indicacion1"
+            android:layout_centerVertical="true"
+            android:textColor="@color/azul_oscuro"
+            android:textSize="30sp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/indicacion3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/indicacion1"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:paddingLeft="50dp"
+        android:paddingRight="20dp"
+        >
+
+        <TextView
+            android:id="@+id/txt_indicacion3"
+            android:layout_width="505dp"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_indicacion3Evaluate"
+            android:textColor="@color/azul_oscuro"
+            android:textSize="30sp"
+            android:layout_marginRight="@dimen/medium_margin"
+            />
+
+        <ImageView
+            android:id="@+id/img_indicacion3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/estrella"
+            android:layout_alignParentRight="true"
+            />
+
+        <TextView
+            android:id="@+id/txt_indicacion4"
+            android:layout_width="505dp"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_indicacion4Evaluate"
+            android:textColor="@color/azul_oscuro"
+            android:layout_below="@id/txt_indicacion3"
+            android:textSize="30sp"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginRight="@dimen/medium_margin"
+            />
+
+        <ImageView
+            android:id="@+id/img_indicacion4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/corazon"
+            android:layout_below="@+id/txt_indicacion3"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
 
     <CheckBox
         android:id="@+id/cb_skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txt_skip_message"
-        android:layout_below="@+id/txt_indicacion_evalua"
+        android:layout_below="@+id/indicacion3"
         android:layout_centerHorizontal="true"
-        android:textSize="20sp"
-        android:visibility="gone"/>
+        android:textColor="@color/azul_oscuro"
+        android:layout_marginTop="100dp"
+        android:textSize="22sp"/>
+
+    <Button
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
+        android:id="@+id/btn_entendido"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Entendido"
+        android:textSize="30sp"
+        android:textColor="@color/btn_color_txt"
+        android:layout_below="@+id/cb_skip"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="50dp"/>
 
 </RelativeLayout>

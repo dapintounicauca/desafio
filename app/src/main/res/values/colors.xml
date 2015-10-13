@@ -6,4 +6,8 @@
     <color name="btn_color_txt">#007286</color>
     <color name="gris_claro">#c1c1c1</color>
     <color name="gris_oscuro">#3d3d3d</color>
+    <color name="rojo_oscuro">#ab0000</color>
+    <color name="azul_oscuro">#e100064b</color>
+    <color name="cafe">#703515</color>
+
 </resources>

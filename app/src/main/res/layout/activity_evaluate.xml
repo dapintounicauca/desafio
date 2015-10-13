@@ -1,7 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.unicauca.moviles.alimentaahomero.EvaluateActivity">
+    android:layout_height="match_parent" tools:context="com.unicauca.moviles.alimentaahomero.EvaluateActivity">
 
     <ImageView
         android:id="@+id/img_fondo_evalua"
@@ -17,8 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:background="@drawable/titulo_intro"
-        android:layout_marginTop="@dimen/small_margin"
-        />
+        android:layout_marginTop="@dimen/small_margin"/>
 
     <RelativeLayout
         android:id="@+id/contenedor_preguntas"
@@ -29,22 +27,12 @@
         android:padding="@dimen/small_margin"
         android:layout_below="@id/img_titulo_intro">
 
-        <!--<ImageView
-            android:id="@+id/img_pregunta"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="43dp"
-            android:layout_marginStart="43dp" />-->
-
         <TextView
             android:id="@+id/num_pregunta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Pregunta 1"
-            android:textColor="#ab0000"
+            android:textColor="@color/rojo_oscuro"
             android:paddingLeft="80dp"
             android:textSize="38sp"/>
 
@@ -72,6 +60,7 @@
         android:padding="20dp"
         android:layout_toLeftOf="@+id/img_titulo_intro"
         android:layout_toStartOf="@+id/img_titulo_intro">
+
         <TextView
             android:id="@+id/txt_vidas"
             android:layout_width="wrap_content"
@@ -173,7 +162,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="@dimen/medium_margin"
         android:layout_marginRight="@dimen/medium_margin"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="@dimen/small_margin"
         android:padding="@dimen/medium_margin"
         >
         <TableLayout
@@ -195,7 +184,7 @@
                     android:id="@+id/pt_boca"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#550033cc"
+                    android:background="#000033cc"
                     android:layout_span="2" />
             </TableRow>
             <TableRow
@@ -203,10 +192,11 @@
                 <ImageView /><ImageView />
                 <ImageView />
                 <ImageView />
-                <ImageView android:id="@+id/pt_esofago"
+                <ImageView
+                    android:id="@+id/pt_esofago"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#5500ff00"/>
+                    android:background="#0000ff00"/>
             </TableRow>
             <TableRow
                 android:layout_weight="1.5">
@@ -215,40 +205,40 @@
                     android:id="@+id/pt_higado"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#55780018"
+                    android:background="#00780018"
                     android:layout_span="3"/>
                 <ImageView
                     android:id="@+id/pt_estomago"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#55fe4c6a"/>
+                    android:background="#00fe4c6a"/>
             </TableRow>
             <TableRow
-                android:layout_weight="0.6">
-                <ImageView /><ImageView />
-                <ImageView />
+                android:layout_weight="0.5">
+                <ImageView /><ImageView /><ImageView />
                 <ImageView
                     android:id="@+id/pt_pancreas"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#b843ec41"
+                    android:background="#0043ec41"
                     android:layout_span="2"/>
             </TableRow>
-            <TableRow android:layout_weight="0.2">
+            <TableRow android:layout_weight="1.8">
                 <ImageView /><ImageView />
                 <RelativeLayout
-                    android:layout_span="4">
+                    android:layout_span="4"
+                    android:layout_height="match_parent">
                     <ImageView
                         android:id="@+id/pt_grueso"
-                        android:background="#557300ff"
+                        android:background="#007300ff"
                         android:layout_width="match_parent"
-                        android:layout_height="180dp"
+                        android:layout_height="match_parent"
                         android:layout_centerHorizontal="true"
                         />
                     <ImageView
                         android:id="@+id/pt_delgado"
-                        android:background="#5534ec0f"
-                        android:layout_width="110dp"
+                        android:background="#0034ec0f"
+                        android:layout_width="120dp"
                         android:layout_height="120dp"
                         android:layout_centerHorizontal="true"
                         android:layout_alignBottom="@+id/pt_grueso"
@@ -262,7 +252,7 @@
                 <ImageView /><ImageView /><ImageView />
                 <ImageView
                     android:id="@+id/pt_ano"
-                    android:background="#5500ff11"
+                    android:background="#0000ff11"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_span="2"/>
@@ -287,6 +277,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="@dimen/small_margin"
         android:src="@drawable/ayuda"/>
+
     <ImageView
         android:id="@+id/img_home"
         android:layout_width="80dp"

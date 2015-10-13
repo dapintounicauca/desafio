@@ -22,9 +22,9 @@
         android:id="@+id/contenedor_info"
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:background="#007286"
+        android:background="@drawable/cuaderno"
         android:layout_margin="@dimen/medium_margin"
-        android:padding="10dp"
+        android:padding="@dimen/small_margin"
         android:layout_below="@id/img_titulo_intro"
         >
         <ImageView
@@ -32,16 +32,17 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/homer_info"
-            android:layout_marginRight="5dp"
+            android:layout_marginRight="@dimen/little_margin"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/big_margin"
             />
         <TextView
             android:id="@+id/titulo_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/titulo_info_aprender"
-            android:textColor="#ffffff"
-            android:textSize="40sp"
+            android:textColor="@color/rojo_oscuro"
+            android:textSize="@dimen/txt_size_medium"
             android:layout_toRightOf="@id/img_info"/>
 
         <TextView
@@ -51,164 +52,172 @@
             android:text="@string/contenido_info_aprender"
             android:layout_below="@id/titulo_info"
             android:layout_toRightOf="@id/img_info"
-            android:textColor="#d2ffffff"
-            android:textSize="25sp"/>
+            android:textColor="@color/azul_oscuro"
+            android:textSize="@dimen/txt_size_small"/>
     </RelativeLayout>
-
-    <LinearLayout
-        android:id="@+id/contenedor_frutas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:orientation="vertical"
-        android:background="#C19A6B"
-        android:layout_below="@id/contenedor_info"
-        android:layout_marginLeft="@dimen/medium_margin"
-        android:padding="@dimen/small_margin"
-        >
-
-        <TextView
-            android:text="Frutas"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:textSize="25sp"
-            android:gravity="center"
-            />
-
-        <ImageView
-            android:id="@+id/img_manzana"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:background="@drawable/manzana"
-            android:layout_gravity="center"/>
-
-        <ImageView
-            android:id="@+id/img_naranja"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:background="@drawable/naranja"
-            android:layout_gravity="center"/>
-
-        <ImageView
-            android:id="@+id/img_uva"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:background="@drawable/uva"
-            android:layout_gravity="center"/>
-
-    </LinearLayout>
 
     <RelativeLayout
-        android:id="@+id/contenedor_organos"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#007286"
-        android:layout_below="@id/contenedor_info"
-        android:layout_toRightOf="@+id/contenedor_frutas"
-        android:layout_alignParentRight="true"
-        android:orientation="vertical"
-        android:layout_marginBottom="@dimen/medium_margin"
-        android:layout_marginRight="@dimen/medium_margin"
-
-        >
-        <ImageView
-            android:id="@+id/img_digestivocompleto"
+        android:layout_below="@+id/contenedor_info">
+        <LinearLayout
+            android:id="@+id/contenedor_frutas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/sistema_digestivo"
-            android:layout_centerHorizontal="true"
-            />
+            android:layout_marginRight="@dimen/small_margin"
+            android:orientation="vertical"
+            android:background="@color/cafe"
+            android:layout_marginLeft="@dimen/medium_margin"
+            android:padding="@dimen/small_margin"
+            android:layout_centerVertical="true"
+            >
 
-        <TableLayout
-            android:layout_width="200dp"
+            <TextView
+                android:id="@+id/txt_frutas"
+                android:text="Frutas"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/txt_size_small"
+                android:gravity="center"
+                />
+
+            <ImageView
+                android:id="@+id/img_manzana"
+                android:layout_width="@dimen/size_fruit"
+                android:layout_height="@dimen/size_fruit"
+                android:background="@drawable/manzana"
+                android:layout_gravity="center"/>
+
+            <ImageView
+                android:id="@+id/img_naranja"
+                android:layout_width="@dimen/size_fruit"
+                android:layout_height="@dimen/size_fruit"
+                android:background="@drawable/naranja"
+                android:layout_gravity="center"/>
+
+            <ImageView
+                android:id="@+id/img_uva"
+                android:layout_width="@dimen/size_fruit"
+                android:layout_height="@dimen/size_fruit"
+                android:background="@drawable/uva"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/contenedor_organos"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:stretchColumns="*">
-            <TableRow android:layout_weight="2.9">
-                <ImageView /><ImageView /><ImageView /><ImageView />
-            </TableRow>
-            <TableRow
-                android:layout_weight="0.5">
-                <ImageView android:layout_height="wrap_content" />
-                <LinearLayout
-                    android:id="@+id/pt_boca"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#550033cc"
-                    android:layout_span="2" android:orientation="vertical"/>
-            </TableRow>
-            <TableRow
-                android:layout_weight="1.4">
-                <ImageView />
-                <ImageView />
-                <LinearLayout android:id="@+id/pt_esofago"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#5500ff00" android:orientation="vertical"/>
-            </TableRow>
-            <TableRow
-                android:layout_weight="1.5">
-                <LinearLayout
-                    android:id="@+id/pt_higado"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#55780018"
-                    android:layout_span="3" android:orientation="vertical"/>
-                <LinearLayout
-                    android:id="@+id/pt_estomago"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#55fe4c6a" android:orientation="vertical"/>
-            </TableRow>
-            <TableRow
-                android:layout_weight="0.5">
-                <ImageView />
-                <LinearLayout
-                    android:id="@+id/pt_pancreas"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#b843ec41"
-                    android:layout_span="2" android:orientation="vertical"/>
-            </TableRow>
-            <TableRow>
-                <RelativeLayout
-                    android:layout_weight="1"
-                    android:layout_span="4">
+            android:background="@drawable/vertical_table"
+            android:layout_toRightOf="@+id/contenedor_frutas"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:layout_marginRight="@dimen/medium_margin"
+            android:layout_marginLeft="@dimen/small_margin"
+            android:padding="@dimen/medium_margin"
+            >
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/sistema_digestivo"
+                android:stretchColumns="*">
+                <TableRow android:layout_weight="3">
+                    <ImageView /><ImageView /><ImageView /><ImageView />
+                    <ImageView /><ImageView /><ImageView /><ImageView />
+                </TableRow>
+                <TableRow
+                    android:layout_weight="0.5">
+                    <ImageView/><ImageView/>
+                    <ImageView android:layout_height="wrap_content" />
                     <LinearLayout
-                        android:id="@+id/pt_grueso"
-                        android:background="#557300ff"
+                        android:id="@+id/pt_boca"
                         android:layout_width="match_parent"
-                        android:layout_height="180dp"
-                        android:orientation="vertical"
-                        />
+                        android:layout_height="match_parent"
+                        android:background="#000033cc"
+                        android:layout_span="2" android:orientation="vertical"/>
+                </TableRow>
+                <TableRow
+                    android:layout_weight="1.4">
+                    <ImageView /><ImageView />
+                    <ImageView />
+                    <ImageView />
                     <LinearLayout
-                        android:id="@+id/pt_delgado"
-                        android:background="#5534ec0f"
-                        android:layout_width="100dp"
-                        android:layout_height="120dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_alignBottom="@+id/pt_grueso"
+                        android:id="@+id/pt_esofago"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#0000ff00" android:orientation="vertical"/>
+                </TableRow>
+                <TableRow
+                    android:layout_weight="1.5">
+                    <ImageView /><ImageView />
+                    <LinearLayout
+                        android:id="@+id/pt_higado"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#00780018"
+                        android:layout_span="3" android:orientation="vertical"/>
+                    <LinearLayout
+                        android:id="@+id/pt_estomago"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#00fe4c6a" android:orientation="vertical"/>
+                </TableRow>
+                <TableRow
+                    android:layout_weight="0.5">
+                    <ImageView /><ImageView /><ImageView />
+                    <LinearLayout
+                        android:id="@+id/pt_pancreas"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#0043ec41"
+                        android:layout_span="2" android:orientation="vertical"/>
+                </TableRow>
+                <TableRow android:layout_weight="1.8">
+                    <ImageView /><ImageView />
+                    <RelativeLayout
+                        android:layout_span="4"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:id="@+id/pt_grueso"
+                            android:background="#007300ff"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            />
+                        <LinearLayout
+                            android:id="@+id/pt_delgado"
+                            android:background="#0034ec0f"
+                            android:layout_width="150dp"
+                            android:layout_height="120dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_alignBottom="@+id/pt_grueso"
+                            android:orientation="vertical"
+                            />
+                    </RelativeLayout>
+
+                </TableRow>
+                <TableRow
+                    android:layout_weight="0.8">
+                    <ImageView /><ImageView /><ImageView />
+                    <LinearLayout
+                        android:id="@+id/pt_ano"
+                        android:background="#0000ff11"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_span="2"
                         android:orientation="vertical"
                         />
-                </RelativeLayout>
-            </TableRow>
-            <TableRow
-                android:layout_weight="0.7">
-                <ImageView />
-                <LinearLayout
-                    android:id="@+id/pt_ano"
-                    android:background="#5500ff11"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_span="2"
-                    android:orientation="vertical"
-                    />
-            </TableRow>
-        </TableLayout>
+                </TableRow>
+            </TableLayout>
+
+        </RelativeLayout>
+
     </RelativeLayout>
-    
     <ImageView
         android:id="@+id/img_ayuda"
         android:layout_width="70dp"
@@ -216,6 +225,7 @@
         android:layout_alignParentRight="true"
         android:src="@drawable/ayuda"
         android:layout_marginLeft="@dimen/medium_margin"/>
+
     <ImageView
         android:id="@+id/img_home"
         android:layout_width="80dp"

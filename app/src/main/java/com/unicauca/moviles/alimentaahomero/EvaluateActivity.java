@@ -34,6 +34,10 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
     TextView txt_indicacion, txt_indicacion_titulo;
     Typeface typeface;
 
+    TextView txt_intro_indicaciones, txt_indicacion1, txt_indicacion2, txt_indicacion3, txt_indicacion4;
+    CheckBox cb_skip;
+    Button btn_entendido;
+
     //int state =0;
     String[] preguntas, respuestas;
     Integer num_pregunta_actual;
@@ -60,8 +64,6 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
         pregunta = (TextView) findViewById(R.id.pregunta);
         txt_puntos = (TextView) findViewById(R.id.txt_puntos);
         txt_vidas = (TextView) findViewById(R.id.txt_vidas);
-
-
 
         generarPreguntasAleatorias();
         num_pregunta.setText("Pregunta 1");
@@ -267,37 +269,37 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
         View dialog_layout = inflater.inflate(R.layout.dialog_help_evaluate, null);
         dontShowAgain = (CheckBox) dialog_layout.findViewById(R.id.cb_skip);
 
+        txt_intro_indicaciones = (TextView) dialog_layout.findViewById(R.id.txt_indicacion_evaluate);
+        txt_indicacion1 = (TextView) dialog_layout.findViewById(R.id.txt_indicacion1);
+        txt_indicacion2 = (TextView) dialog_layout.findViewById(R.id.txt_indicacion2);
+        txt_indicacion3 = (TextView) dialog_layout.findViewById(R.id.txt_indicacion3);
+        txt_indicacion4 = (TextView) dialog_layout.findViewById(R.id.txt_indicacion4);
+        cb_skip = (CheckBox) dialog_layout.findViewById(R.id.cb_skip);
+        btn_entendido = (Button) dialog_layout.findViewById(R.id.btn_entendido);
 
-        txt_indicacion = (TextView) dialog_layout.findViewById(R.id.txt_indicacion_evalua);
-        txt_indicacion_titulo = (TextView) dialog_layout.findViewById(R.id.txt_indicacion_titulo);
-
-        txt_indicacion.setTypeface(typeface);
-        txt_indicacion_titulo.setTypeface(typeface);
+        txt_intro_indicaciones.setTypeface(typeface);
+        txt_indicacion1.setTypeface(typeface);
+        txt_indicacion2.setTypeface(typeface);
+        txt_indicacion3.setTypeface(typeface);
+        txt_indicacion4.setTypeface(typeface);
+        cb_skip.setTypeface(typeface);
+        btn_entendido.setTypeface(typeface);
 
         AlertDialog.Builder db = new AlertDialog.Builder(EvaluateActivity.this);
         db.setView(dialog_layout);
-        /*db.setPositiveButton("ENTENDIDO", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
 
-                String checkBoxResult = "NOT checked";
-                if (dontShowAgain.isChecked())
-                    checkBoxResult = "checked";
-
-                SharedPreferences settings = getSharedPreferences(PREFS_NAME2, 0);
-                SharedPreferences.Editor editor = settings.edit();
-                editor.putString("skipMessageEvaluate", checkBoxResult);
-                editor.commit();
-                return;
-            }
-        });*/
         dontShowAgain.setTypeface(typeface);
         dontShowAgain.setVisibility(View.VISIBLE);
-        /*
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME2, 0);
-        String skipMessage = settings.getString("skipMessageEvaluate", "NOT checked");
-        if (!skipMessage.equals("checked"))*/
-            db.show();
+
+        final AlertDialog show = db.show();
+        btn_entendido.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show.dismiss();
+            }
+        });
     }
+
     public void show_dialog_result(int opc)
     {
         LayoutInflater inflater = LayoutInflater.from(this);

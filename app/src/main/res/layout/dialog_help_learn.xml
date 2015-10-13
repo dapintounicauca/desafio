@@ -1,31 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:padding="15dp">
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:background="@drawable/cuaderno_dialog"  android:padding="50dp">
 
     <TextView
         android:id="@+id/txt_intro_indicaciones"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="30sp"
         android:text="@string/intro_indicacionLearn"
+        android:textColor="@color/rojo_oscuro"
         android:layout_centerHorizontal="true"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        />
+        android:paddingLeft="50dp"
+        android:paddingRight="@dimen/medium_margin"
+        android:layout_marginTop="@dimen/medium_margin"/>
 
     <RelativeLayout
         android:id="@+id/indicacion1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/txt_intro_indicaciones"
-        android:layout_marginTop="10dp">
-
+        android:layout_marginTop="@dimen/medium_margin"
+        android:paddingLeft="60dp"
+        android:paddingRight="20dp"
+        >
         <ImageView
+            android:layout_marginTop="@dimen/medium_margin"
             android:id="@+id/img_indicacion1"
-            android:layout_width="150dp"
-            android:layout_height="250dp"
+            android:layout_width="200dp"
+            android:layout_height="300dp"
             android:src="@drawable/indicacion1"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginRight="30dp"/>
 
 
         <TextView
@@ -35,8 +41,8 @@
             android:text="@string/txt_indicacion1Learn"
             android:layout_toRightOf="@id/img_indicacion1"
             android:layout_centerVertical="true"
-            android:textColor="#000000"
-            android:textSize="20sp"
+            android:textColor="@color/azul_oscuro"
+            android:textSize="30sp"
             />
 
     </RelativeLayout>
@@ -46,24 +52,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/indicacion1"
-        android:layout_marginTop="10dp">
-
-        <ImageView
-            android:id="@+id/img_indicacion2"
-            android:layout_width="150dp"
-            android:layout_height="250dp"
-            android:background="@drawable/indicacion2"
-            android:layout_marginRight="10dp"/>
+        android:layout_marginTop="@dimen/medium_margin"
+        android:paddingLeft="50dp"
+        android:paddingRight="20dp"
+        >
 
         <TextView
             android:id="@+id/txt_indicacion2"
-            android:layout_width="match_parent"
+            android:layout_width="505dp"
             android:layout_height="wrap_content"
             android:text="@string/txt_indicacion2Learn"
-            android:textColor="#000000"
+            android:textColor="@color/azul_oscuro"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/img_indicacion2"
-            android:textSize="20sp"
+            android:textSize="30sp"
+            android:layout_marginLeft="20dp"
+            android:layout_toLeftOf="@+id/img_indicacion2"
+            android:layout_marginRight="@dimen/medium_margin"
+            />
+
+        <ImageView
+            android:id="@+id/img_indicacion2"
+            android:layout_width="200dp"
+            android:layout_height="300dp"
+            android:background="@drawable/indicacion2"
+            android:layout_alignParentRight="true"
             />
 
     </RelativeLayout>
@@ -73,8 +85,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txt_skip_message"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/indicacion2"
         android:layout_centerHorizontal="true"
-        android:visibility="gone"/>
+        android:textColor="@color/azul_oscuro"
+        android:layout_marginTop="100dp"
+        android:textSize="22sp"/>
+
+    <Button
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
+        android:id="@+id/btn_entendido"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Entendido"
+        android:textSize="30sp"
+        android:textColor="@color/btn_color_txt"
+        android:layout_below="@+id/cb_skip"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="50dp"/>
 
 </RelativeLayout>
