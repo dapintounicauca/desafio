@@ -9,7 +9,7 @@
     <style name="ButtonAccent" parent="Base.Widget.AppCompat.Button">
         <item name="colorControlHighlight">@color/primaryDark</item>
         <item name="colorButtonNormal">@color/primary</item>
-        <item name="android:textColor">#ffffff</item>
+        <item name="android:textColor">@color/gris_oscuro</item>
     </style>
 
     <style name="NoAppBar" parent="Theme.AppCompat.Light.NoActionBar">

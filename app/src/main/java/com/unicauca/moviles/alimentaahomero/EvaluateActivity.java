@@ -7,8 +7,10 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v4.view.ViewPropertyAnimatorListener;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -24,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class EvaluateActivity extends AppCompatActivity implements View.OnClickListener {
+public class EvaluateActivity extends AppCompatActivity implements View.OnClickListener, ViewPropertyAnimatorListener {
 
     public static final String PREFS_NAME2 = "MyPrefsFile2";
 
@@ -32,6 +34,7 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
     TextView txt_indicacion, txt_indicacion_titulo;
     Typeface typeface;
 
+    //int state =0;
     String[] preguntas, respuestas;
     Integer num_pregunta_actual;
 
@@ -87,6 +90,7 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
         txt_vidas.setTypeface(typeface);
         txt_puntos.setTypeface(typeface);
 
+        //ViewCompat.setAlpha(img_resultado, 0);
 
         boca.setOnClickListener(this);
         esofago.setOnClickListener(this);
@@ -177,7 +181,9 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
         }
         else {
             if(getResources().getResourceEntryName(v.getId()).equals(respuestas[num_pregunta_actual-1])) {
+                //state = 0;
                 img_resultado.setImageResource(R.drawable.yuju);
+                //ViewCompat.animate(img_resultado).setDuration(100).alpha(100).setListener(this).start();
                 pintar_estrella(); //hace visible una estrella en puntaje
                 sonar(0);
                 if(total_estrellas==10)
@@ -211,6 +217,7 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
         pregunta.setText(preguntas[num_pregunta_actual - 1]);
         num_intentos=0;
     }
+
     public void sonar(int opc)
     {
         mp.reset();
@@ -223,6 +230,7 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
         mp.seekTo(0);
         mp.start();
     }
+
     public void pintar_estrella()
     {
         int n_fil=0;
@@ -236,6 +244,7 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
         estrella.setVisibility(View.VISIBLE);
         total_estrellas+=1;
     }
+
     public void mostrar_resultado(int tipo) {
         if(tipo==0){  /*pierde el juego*/
             show_dialog_result(0);
@@ -350,7 +359,25 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
         AlertDialog.Builder db = new AlertDialog.Builder(EvaluateActivity.this);
         db.setView(dialog_result);
         db.show();
-        
+
+
+    }
+
+    @Override
+    public void onAnimationStart(View view) {
+
+    }
+
+    @Override
+    public void onAnimationEnd(View view) {
+        /*if(state ==0) {
+            ViewCompat.animate(img_resultado).setStartDelay(100).setDuration(1000).alpha(0).setListener(this).start();
+            state=1;
+        }*/
+    }
+
+    @Override
+    public void onAnimationCancel(View view) {
 
     }
 }

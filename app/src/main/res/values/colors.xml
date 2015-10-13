@@ -4,4 +4,6 @@
     <color name="primaryDark">#e1bb00</color>
     <color name="accent">#651FFF</color>
     <color name="btn_color_txt">#007286</color>
+    <color name="gris_claro">#c1c1c1</color>
+    <color name="gris_oscuro">#3d3d3d</color>
 </resources>

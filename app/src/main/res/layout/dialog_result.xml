@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/cuaderno_dialog">
 
     <ImageView
@@ -8,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:src="@drawable/has_ganado"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         />
     <ImageView
         android:id="@+id/titulo_resultado"
@@ -91,12 +93,12 @@
         android:orientation="horizontal"
         android:layout_below="@+id/tabla_estrellas_dialog"
         android:gravity="right"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="200dp"
 
         >
 
         <Button
-            style="@style/Widget.AppCompat.Button.Borderless"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
             android:id="@+id/btn_jugar"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
@@ -104,13 +106,14 @@
             android:text="Volver a jugar"
             android:textSize="30sp"/>
         <Button
-            style="@style/Widget.AppCompat.Button.Borderless"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
             android:id="@+id/btn_salir"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Salir"
             android:textSize="30sp"/>
+
 
     </LinearLayout>
 </RelativeLayout>
