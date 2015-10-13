@@ -1,8 +1,6 @@
 package com.unicauca.moviles.alimentaahomero;
 
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -27,7 +25,7 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
     public static final String PREFS_NAME2 = "MyPrefsFile2";
 
     TextView num_pregunta, pregunta, txt_vidas, txt_puntos;
-    TextView txt_indicacion;
+    TextView txt_indicacion, txt_indicacion_titulo;
     Typeface typeface;
 
     String[] preguntas, respuestas;
@@ -80,7 +78,7 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
         vidas = (TableLayout) findViewById(R.id.tabla_vidas);
 
         typeface = Typeface.createFromAsset(getAssets(),"fonts/BradBunR.ttf");
-        pregunta .setTypeface(typeface);
+        pregunta.setTypeface(typeface);
         num_pregunta.setTypeface(typeface);
         txt_vidas.setTypeface(typeface);
         txt_puntos.setTypeface(typeface);
@@ -204,7 +202,6 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
         mp.seekTo(0);
         mp.start();
     }
-
     public void pintar_estrella()
     {
         int n_fil=0;
@@ -242,12 +239,14 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
 
 
         txt_indicacion = (TextView) dialog_layout.findViewById(R.id.txt_indicacion_evalua);
+        txt_indicacion_titulo = (TextView) dialog_layout.findViewById(R.id.txt_indicacion_titulo);
 
         txt_indicacion.setTypeface(typeface);
+        txt_indicacion_titulo.setTypeface(typeface);
 
         AlertDialog.Builder db = new AlertDialog.Builder(EvaluateActivity.this);
         db.setView(dialog_layout);
-        db.setPositiveButton("ENTENDIDO", new DialogInterface.OnClickListener() {
+        /*db.setPositiveButton("ENTENDIDO", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
 
                 String checkBoxResult = "NOT checked";
@@ -260,11 +259,13 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
                 editor.commit();
                 return;
             }
-        });
+        });*/
+        dontShowAgain.setTypeface(typeface);
         dontShowAgain.setVisibility(View.VISIBLE);
+        /*
         SharedPreferences settings = getSharedPreferences(PREFS_NAME2, 0);
         String skipMessage = settings.getString("skipMessageEvaluate", "NOT checked");
-        if (!skipMessage.equals("checked"))
+        if (!skipMessage.equals("checked"))*/
             db.show();
     }
 

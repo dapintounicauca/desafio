@@ -24,38 +24,38 @@
         android:id="@+id/contenedor_preguntas"
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:background="@drawable/table"
+        android:background="@drawable/cuaderno"
         android:layout_margin="@dimen/medium_margin"
         android:padding="@dimen/small_margin"
         android:layout_below="@id/img_titulo_intro">
 
-        <ImageView
+        <!--<ImageView
             android:id="@+id/img_pregunta"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/homero_intelectual"
-            android:layout_marginRight="5dp"
             android:layout_centerVertical="true"
-            />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="43dp"
+            android:layout_marginStart="43dp" />-->
 
         <TextView
             android:id="@+id/num_pregunta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Pregunta 1"
-            android:padding="@dimen/small_margin"
-            android:textColor="#ffffff"
-            android:textSize="40sp"
-            android:layout_toRightOf="@id/img_pregunta"/>
+            android:textColor="#ab0000"
+            android:paddingLeft="80dp"
+            android:textSize="38sp"/>
 
         <TextView
             android:id="@+id/pregunta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/num_pregunta"
-            android:layout_toRightOf="@id/img_pregunta"
-            android:padding="@dimen/small_margin"
-            android:textColor="#d2ffffff"
+            android:paddingLeft="80dp"
+            android:paddingRight="@dimen/small_margin"
+            android:textColor="#e100064b"
             android:textSize="30sp"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
@@ -285,7 +285,13 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_alignParentRight="true"
-        android:src="@drawable/ayuda"
-        android:layout_marginLeft="@dimen/medium_margin"/>
+        android:layout_marginRight="@dimen/small_margin"
+        android:src="@drawable/ayuda"/>
+    <ImageView
+        android:id="@+id/img_home"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/home"
+        android:layout_marginLeft="@dimen/small_margin"/>
 
 </RelativeLayout>
