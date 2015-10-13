@@ -1,6 +1,7 @@
 package com.unicauca.moviles.alimentaahomero;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -157,6 +158,16 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
             dontShowAgain.setVisibility(View.INVISIBLE);
             db.show();
         }
+        else if(v.getId() == R.id.btn_jugar)
+        {
+            Intent intent = new Intent(this, LearnActivity.class);
+            startActivity(intent);
+        }
+        else if(v.getId() == R.id.btn_salir)
+        {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
         else {
             if(getResources().getResourceEntryName(v.getId()).equals(respuestas[num_pregunta_actual-1])) {
                 img_resultado.setImageResource(R.drawable.yuju);
@@ -220,9 +231,9 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
     }
     public void mostrar_resultado(int tipo) {
         if(tipo==0){  /*pierde el juego*/
-
+            show_dialog_result(0);
         }else{   /*gana el juego*/
-            
+            show_dialog_result(1);
         }
 
     }
@@ -268,4 +279,31 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
             db.show();
     }
 
+    public void show_dialog_result(int opc)
+    {
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View dialog_result = inflater.inflate(R.layout.dialog_result, null);
+
+        TextView titulo = (TextView) dialog_result.findViewById(R.id.titulo_resultado);
+        TextView contenido = (TextView) dialog_result.findViewById(R.id.txt_resultado);
+        ImageView imagen = (ImageView) dialog_result.findViewById(R.id.img_resultado);
+
+        ImageView btn_jugar = (ImageView) dialog_result.findViewById(R.id.img_resultado);
+        ImageView btn_salir = (ImageView) dialog_result.findViewById(R.id.img_resultado);
+
+        if(opc == 0) //Gano
+        {
+            titulo.setText("Gano");
+            contenido.setText("Bien hecho!");
+            imagen.setImageResource(R.drawable.has_ganado);
+        }
+        else { //Perdio
+            titulo.setText("Perdio");
+            contenido.setText("Mal hecho!");
+            imagen.setImageResource(R.drawable.has_ganado);
+        }
+
+        btn_jugar.setOnClickListener(this);
+        btn_salir.setOnClickListener(this);
+    }
 }
