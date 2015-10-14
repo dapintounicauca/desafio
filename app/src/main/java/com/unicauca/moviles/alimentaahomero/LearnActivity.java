@@ -20,6 +20,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.VideoView;
 
@@ -30,12 +31,12 @@ public class LearnActivity extends AppCompatActivity implements View.OnTouchList
     ImageView manzana, naranja, uvas, img_info, img_ayuda;
     LinearLayout contenedor_fr, boca, esofago, estomago, higado, pancreas, delgado, grueso, ano;
     TextView titulo_info, contenido_info, txt_frutas;
-    CheckBox dontShowAgain;
     Typeface typeface;
     ImageView img_home;
-    TextView txt_intro_indicaciones,txt_indicacion1,txt_indicacion2;
-    CheckBox cb_skip;
+    TextView txt_intro_indicaciones,txt_indicacion1,txt_indicacion2, txt_intro_video;
+    CheckBox dontShowAgain;
     Button btn_entendido;
+    VideoView video;
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
@@ -149,28 +150,28 @@ public class LearnActivity extends AppCompatActivity implements View.OnTouchList
                 switch (container.getId())
                 {
                     case R.id.pt_boca:
-                        show_dialog(v, "Boca");
+                        show_dialog_video("Boca");
                         break;
                     case R.id.pt_esofago:
-                        show_dialog(v, "Esofago");
+                        show_dialog_video("Esofago");
                         break;
                     case R.id.pt_estomago:
-                        show_dialog(v, "Estomago");
+                        show_dialog_video("Estomago");
                         break;
                     case R.id.pt_higado:
-                        show_dialog(v, "Higado");
+                        show_dialog_video("Higado");
                         break;
                     case R.id.pt_pancreas:
-                        show_dialog(v, "Pancreas");
+                        show_dialog_video("Pancreas");
                         break;
                     case R.id.pt_delgado:
-                        show_dialog(v, "Delgado");
+                        show_dialog_video("Delgado");
                         break;
                     case R.id.pt_grueso:
-                        show_dialog(v, "Grueso");
+                        show_dialog_video("Grueso");
                         break;
                     case R.id.pt_ano:
-                        show_dialog(v, "Ano");
+                        show_dialog_video("Ano");
                         break;
                     case R.id.contenedor_frutas:
                         titulo_info.setText(R.string.titulo_info_aprender);
@@ -241,66 +242,126 @@ public class LearnActivity extends AppCompatActivity implements View.OnTouchList
             case R.id.img_ayuda:
                 LayoutInflater inflater = LayoutInflater.from(this);
                 View dialog_layout = inflater.inflate(R.layout.dialog_help_learn, null);
-                dontShowAgain = (CheckBox) dialog_layout.findViewById(R.id.cb_skip);
+
                 AlertDialog.Builder db = new AlertDialog.Builder(LearnActivity.this);
                 db.setView(dialog_layout);
-                db.setTitle("Indicaciones");
-                db.setPositiveButton("ENTENDIDO", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
+
+                txt_intro_indicaciones = (TextView) dialog_layout.findViewById(R.id.txt_intro_indicaciones);
+                txt_indicacion1 = (TextView) dialog_layout.findViewById(R.id.txt_indicacion1);
+                txt_indicacion2 = (TextView) dialog_layout.findViewById(R.id.txt_indicacion2);
+                dontShowAgain = (CheckBox) dialog_layout.findViewById(R.id.cb_skip);
+                btn_entendido = (Button) dialog_layout.findViewById(R.id.btn_entendido);
+
+                txt_intro_indicaciones.setTypeface(typeface);
+                txt_indicacion1.setTypeface(typeface);
+                txt_indicacion2.setTypeface(typeface);
+                btn_entendido.setTypeface(typeface);
+                dontShowAgain.setTypeface(typeface);
+
+                dontShowAgain.setVisibility(View.INVISIBLE);
+
+                final AlertDialog show = db.show();
+                btn_entendido.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        show.dismiss();
                     }
                 });
-                dontShowAgain.setVisibility(View.INVISIBLE);
-                db.show();
                 break;
             case R.id.img_home:
                 this.finish();
                 break;
-            /*case R.id.btn_entendido:
-                Intent intent = new Intent(this, LearnActivity.class);
-                startActivity(intent);
-                break;*/
         }
-    }
-
-    public void show_dialog(View v, String name)
-    {
-        FragmentManager manager = getFragmentManager();
-        ContentActivity dialog = new ContentActivity();
-        dialog.init(name);
-        dialog.show(manager,"ContentActivity");
     }
 
     public void show_dialog_help()
     {
         LayoutInflater inflater = LayoutInflater.from(this);
         View dialog_layout = inflater.inflate(R.layout.dialog_help_learn, null);
-        dontShowAgain = (CheckBox) dialog_layout.findViewById(R.id.cb_skip);
         AlertDialog.Builder db = new AlertDialog.Builder(LearnActivity.this);
         db.setView(dialog_layout);
 
         txt_intro_indicaciones = (TextView) dialog_layout.findViewById(R.id.txt_intro_indicaciones);
         txt_indicacion1 = (TextView) dialog_layout.findViewById(R.id.txt_indicacion1);
         txt_indicacion2 = (TextView) dialog_layout.findViewById(R.id.txt_indicacion2);
-        cb_skip = (CheckBox) dialog_layout.findViewById(R.id.cb_skip);
         btn_entendido = (Button) dialog_layout.findViewById(R.id.btn_entendido);
+        dontShowAgain = (CheckBox) dialog_layout.findViewById(R.id.cb_skip);
 
         txt_intro_indicaciones.setTypeface(typeface);
         txt_indicacion1.setTypeface(typeface);
         txt_indicacion2.setTypeface(typeface);
-        cb_skip.setTypeface(typeface);
+        dontShowAgain.setTypeface(typeface);
         btn_entendido.setTypeface(typeface);
 
         dontShowAgain.setVisibility(View.VISIBLE);
 
         final AlertDialog show = db.show();
-
         btn_entendido.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 show.dismiss();
             }
         });
+    }
 
+    public void show_dialog_video(String organo) {
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View dialog_layout = inflater.inflate(R.layout.dialog_video_learn, null);
+        AlertDialog.Builder db = new AlertDialog.Builder(LearnActivity.this);
+        db.setView(dialog_layout);
 
+        txt_intro_video = (TextView) dialog_layout.findViewById(R.id.txt_intro_video);
+        btn_entendido = (Button) dialog_layout.findViewById(R.id.btn_entendido);
+
+        txt_intro_video.setTypeface(typeface);
+        btn_entendido.setTypeface(typeface);
+
+        txt_intro_video.setText(organo);
+
+        video = (VideoView) dialog_layout.findViewById(R.id.video);
+        Uri path = null;
+        String url = "android.resource://com.unicauca.moviles.alimentaahomero/raw/";
+        switch (organo)
+        {
+            case "Boca":
+                path = Uri.parse(url + R.raw.boca);
+                break;
+            case "Esofago":
+                path = Uri.parse(url + R.raw.esofago);
+                break;
+            case "Estomago":
+                path = Uri.parse(url + R.raw.estomago);
+                break;
+            case "Higado":
+                path = Uri.parse(url + R.raw.higado);
+                break;
+            case "Pancreas":
+                path = Uri.parse(url + R.raw.pancreas);
+                break;
+            case "Delgado":
+                path = Uri.parse(url + R.raw.delgado);
+                break;
+            case "Grueso":
+                path = Uri.parse(url + R.raw.grueso);
+                break;
+            case "Ano":
+                path = Uri.parse(url + R.raw.ano);
+                break;
+        }
+
+        MediaController mediaController = new MediaController(this);
+        mediaController.setAnchorView(video);
+        video.setMediaController(mediaController);
+        video.setVideoURI(path);
+        video.requestFocus();
+        video.start();
+
+        final AlertDialog show = db.show();
+        btn_entendido.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show.dismiss();
+            }
+        });
     }
 }

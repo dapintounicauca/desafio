@@ -79,5 +79,6 @@
     <string name="txt_indicacion4Evaluate">Si respondes mal 3 veces, pierdes un corazón, ¡Cuídalos, solo tienes 3!.</string>
     <string name="txt_vidas">Vidas:</string>
     <string name="txt_puntos">Puntos:</string>
+    <string name="txt_intro_video">Boca</string>
 
 </resources>

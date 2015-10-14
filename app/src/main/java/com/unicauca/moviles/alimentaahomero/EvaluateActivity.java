@@ -35,7 +35,7 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
     Typeface typeface;
 
     TextView txt_intro_indicaciones, txt_indicacion1, txt_indicacion2, txt_indicacion3, txt_indicacion4;
-    CheckBox cb_skip;
+    CheckBox dontShowAgain;
     Button btn_entendido;
 
     //int state =0;
@@ -53,7 +53,6 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
     TableLayout vidas;
     Integer num_intentos;
     Integer num_corazones;
-    CheckBox dontShowAgain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -159,14 +158,34 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
         {
             LayoutInflater inflater = LayoutInflater.from(this);
             View dialog_layout = inflater.inflate(R.layout.dialog_help_evaluate, null);
-            dontShowAgain = (CheckBox) dialog_layout.findViewById(R.id.cb_skip);
             AlertDialog.Builder db = new AlertDialog.Builder(EvaluateActivity.this);
             db.setView(dialog_layout);
-            db.setTitle("Indicaciones");
-            db.setPositiveButton("ENTENDIDO", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {}});
+
+            txt_intro_indicaciones = (TextView) dialog_layout.findViewById(R.id.txt_indicacion_evaluate);
+            txt_indicacion1 = (TextView) dialog_layout.findViewById(R.id.txt_indicacion1);
+            txt_indicacion2 = (TextView) dialog_layout.findViewById(R.id.txt_indicacion2);
+            txt_indicacion3 = (TextView) dialog_layout.findViewById(R.id.txt_indicacion3);
+            txt_indicacion4 = (TextView) dialog_layout.findViewById(R.id.txt_indicacion4);
+            dontShowAgain = (CheckBox) dialog_layout.findViewById(R.id.cb_skip);
+            btn_entendido = (Button) dialog_layout.findViewById(R.id.btn_entendido);
+
+            txt_intro_indicaciones.setTypeface(typeface);
+            txt_indicacion1.setTypeface(typeface);
+            txt_indicacion2.setTypeface(typeface);
+            txt_indicacion3.setTypeface(typeface);
+            txt_indicacion4.setTypeface(typeface);
+            dontShowAgain.setTypeface(typeface);
+            btn_entendido.setTypeface(typeface);
+
             dontShowAgain.setVisibility(View.INVISIBLE);
-            db.show();
+
+            final AlertDialog show = db.show();
+            btn_entendido.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    show.dismiss();
+                }
+            });
         }
         else if(v.getId() == R.id.btn_jugar)
         {
@@ -267,14 +286,15 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
     {
         LayoutInflater inflater = LayoutInflater.from(this);
         View dialog_layout = inflater.inflate(R.layout.dialog_help_evaluate, null);
-        dontShowAgain = (CheckBox) dialog_layout.findViewById(R.id.cb_skip);
+        AlertDialog.Builder db = new AlertDialog.Builder(EvaluateActivity.this);
+        db.setView(dialog_layout);
 
         txt_intro_indicaciones = (TextView) dialog_layout.findViewById(R.id.txt_indicacion_evaluate);
         txt_indicacion1 = (TextView) dialog_layout.findViewById(R.id.txt_indicacion1);
         txt_indicacion2 = (TextView) dialog_layout.findViewById(R.id.txt_indicacion2);
         txt_indicacion3 = (TextView) dialog_layout.findViewById(R.id.txt_indicacion3);
         txt_indicacion4 = (TextView) dialog_layout.findViewById(R.id.txt_indicacion4);
-        cb_skip = (CheckBox) dialog_layout.findViewById(R.id.cb_skip);
+        dontShowAgain = (CheckBox) dialog_layout.findViewById(R.id.cb_skip);
         btn_entendido = (Button) dialog_layout.findViewById(R.id.btn_entendido);
 
         txt_intro_indicaciones.setTypeface(typeface);
@@ -282,13 +302,9 @@ public class EvaluateActivity extends AppCompatActivity implements View.OnClickL
         txt_indicacion2.setTypeface(typeface);
         txt_indicacion3.setTypeface(typeface);
         txt_indicacion4.setTypeface(typeface);
-        cb_skip.setTypeface(typeface);
+        dontShowAgain.setTypeface(typeface);
         btn_entendido.setTypeface(typeface);
 
-        AlertDialog.Builder db = new AlertDialog.Builder(EvaluateActivity.this);
-        db.setView(dialog_layout);
-
-        dontShowAgain.setTypeface(typeface);
         dontShowAgain.setVisibility(View.VISIBLE);
 
         final AlertDialog show = db.show();

@@ -30,12 +30,5 @@
             android:screenOrientation="portrait"
             android:theme="@style/NoAppBar">
         </activity>
-        <activity
-            android:name=".ContentActivity"
-            android:label="@string/title_activity_content"
-            android:theme="@style/NoAppBar"
-            android:screenOrientation="portrait">
-        </activity>
     </application>
-
 </manifest>

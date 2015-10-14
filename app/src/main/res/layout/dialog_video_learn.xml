@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content" android:layout_height="wrap_content"
+    android:background="@drawable/cuaderno_dialog" android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txt_intro_video"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:text="@string/txt_intro_video"
+        android:textColor="@color/rojo_oscuro"
+        android:paddingLeft="50dp"
+        android:paddingRight="@dimen/medium_margin"
+        android:layout_marginTop="@dimen/medium_margin"/>
+
+    <VideoView
+        android:id="@+id/video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:clickable="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/txt_intro_video"
+
+        />
+
+    <Button
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
+        android:id="@+id/btn_entendido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Visto"
+        android:textSize="30sp"
+        android:textColor="@color/btn_color_txt"
+        android:layout_below="@+id/video"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="50dp" />
+
+</RelativeLayout>
