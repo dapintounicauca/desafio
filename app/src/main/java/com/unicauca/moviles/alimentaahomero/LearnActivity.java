@@ -12,6 +12,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Display;
 import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -311,10 +312,10 @@ public class LearnActivity extends AppCompatActivity implements View.OnTouchList
         db.setView(dialog_layout);
 
         txt_intro_video = (TextView) dialog_layout.findViewById(R.id.txt_intro_video);
-        btn_entendido = (Button) dialog_layout.findViewById(R.id.btn_entendido);
+        //btn_entendido = (Button) dialog_layout.findViewById(R.id.btn_entendido);
 
         txt_intro_video.setTypeface(typeface);
-        btn_entendido.setTypeface(typeface);
+        //btn_entendido.setTypeface(typeface);
 
         txt_intro_video.setText(organo);
 
@@ -357,11 +358,12 @@ public class LearnActivity extends AppCompatActivity implements View.OnTouchList
         video.start();
 
         final AlertDialog show = db.show();
-        btn_entendido.setOnClickListener(new View.OnClickListener() {
+        /*btn_entendido.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 show.dismiss();
             }
-        });
+        });*/
+        show.getWindow().setLayout(700, 500);
     }
 }

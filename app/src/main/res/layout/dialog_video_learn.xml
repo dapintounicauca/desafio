@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content" android:layout_height="wrap_content"
-    android:background="@drawable/cuaderno_dialog" android:orientation="vertical">
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentTop="true"
+    android:layout_gravity="fill_horizontal"
+    android:background="@drawable/cuaderno_dialog">
 
     <TextView
         android:id="@+id/txt_intro_video"
@@ -17,25 +23,25 @@
 
     <VideoView
         android:id="@+id/video"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:layout_centerInParent="true"
         android:clickable="true"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/txt_intro_video"
-
+        android:padding="10dp"
         />
 
-    <Button
+    <!--<Button
         style="@style/Base.Widget.AppCompat.Button.Borderless"
         android:id="@+id/btn_entendido"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="Visto"
         android:textSize="30sp"
         android:textColor="@color/btn_color_txt"
         android:layout_below="@+id/video"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="10dp" />-->
 
 </RelativeLayout>
